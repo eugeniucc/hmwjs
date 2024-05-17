@@ -149,43 +149,60 @@
 
 // Найти самое длинное слово в объекте и вывести его ключ.
 
-const dictionary = {
-  word1: "apple",
-  word2: "banana",
-  word3: "strawberry",
-};
+// const dictionary = {
+//   word1: "apple",
+//   word2: "banana",
+//   word3: "strawberry",
+// };
 
-function findLongWord(obj) {
-  let arr = [];
-  let acc = 0;
-  let letters = [];
-  for (const key in obj) {
-    arr = obj[key];
-    console.log(arr);
-    letters = arr.split("");
-    console.log(letters);
-    for (const index of letters) {
-      acc++;
-    }
-  }
-  console.log(acc);
-}
+// function findLongWord(obj) {
+//   let maxLength = 0;
+//   let longestWord = "";
+//   for (const key in obj) {
+//     const wordLenght = obj[key].length;
+//     if (wordLenght > maxLength) {
+//       maxLength = wordLenght;
+//       longestWord = key;
+//     }
+//     console.log(maxLength);
+//   }
+//   console.log(longestWord);
+// }
 
-findLongWord(dictionary);
+// findLongWord(dictionary);
 
 // Задача 2
 // Подсчитать количетсво объектов
+
 // const votes = [
-//     { candidate: 'A' },
-//     { candidate: 'B' },
-//     { candidate: 'A' },
-//     { candidate: 'C' },
-//     { candidate: 'A' }
+//   { candidate: "A" },
+//   { candidate: "B" },
+//   { candidate: "A" },
+//   { candidate: "C" },
+//   { candidate: "A" },
 // ];
+
+// function totalNumber(arr) {
+//   let result = arr.length;
+//   console.log(result);
+// }
+
+// totalNumber(votes);
 
 // Задача 3 *
 // Создайте функцию, которая принимает предложение и искомый символ . Возвращает объект каждого слова в предложении со счетчиком указанного символа в качестве значения.
 // findOccurrences("Hello World", "o") ➞ {
 //   "hello" : 1,
 //   "world" : 1
-// }ё
+// }
+
+const str = "Hello world";
+
+const letter = "o";
+
+function findOccurrences(str, letter) {
+  const arr1 = str.split(" ");
+  console.log(arr2);
+}
+
+findOccurrences(str, letter);
