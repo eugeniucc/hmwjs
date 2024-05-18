@@ -201,8 +201,17 @@ const str = "Hello world";
 const letter = "o";
 
 function findOccurrences(str, letter) {
-  const arr1 = str.split(" ");
-  console.log(arr2);
+  const arr = str.split(" ");
+  let obj = {};
+  arr.forEach((element) => {
+    let acc = 0;
+    for (const iterator of element) {
+      if (iterator === letter) {
+        acc++;
+      }
+    }
+    console.log(acc);
+  });
 }
 
 findOccurrences(str, letter);
