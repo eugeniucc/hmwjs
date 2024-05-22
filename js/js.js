@@ -357,49 +357,79 @@
 
 // Видео 2
 
-const person = Object.create(
-  {
-    calculateAge() {
-      console.log("Age:", new Date().getFullYear() - this.birthYear);
-    },
-  },
-  {
-    name: {
-      value: "vladilen",
-      enumerable: true,
-      writable: true,
-      configurable: true,
-    },
-    birthYear: {
-      value: 1993,
-      enumerable: false,
-      writable: false,
-      configurable: false,
-    },
-    age: {
-      get() {
-        return new Date().getFullYear() - this.birthYear;
-      },
-      set(value) {
-        document.body.style.background = "red";
-        console.log("Set age", value);
-      },
-    },
-  }
-);
+// const person = Object.create(
+//   {
+//     calculateAge() {
+//       console.log("Age:", new Date().getFullYear() - this.birthYear);
+//     },
+//   },
+//   {
+//     name: {
+//       value: "vladilen",
+//       enumerable: true,
+//       writable: true,
+//       configurable: true,
+//     },
+//     birthYear: {
+//       value: 1993,
+//       enumerable: false,
+//       writable: false,
+//       configurable: false,
+//     },
+//     age: {
+//       get() {
+//         return new Date().getFullYear() - this.birthYear;
+//       },
+//       set(value) {
+//         document.body.style.background = "red";
+//         console.log("Set age", value);
+//       },
+//     },
+//   }
+// );
 
-for (const key in person) {
-  if (person.hasOwnProperty(key)) {
-    console.log("key", key, person[key]);
-  }
-}
+// for (const key in person) {
+//   if (person.hasOwnProperty(key)) {
+//     console.log("key", key, person[key]);
+//   }
+// }
 
 // Домашка
 // Напишите функцию arrayToObject, которая будет преобразовывать массив вида [ключ, значение] обратно в объект.
-// const arr = [['a', 1], ['b', 2], ['c', 3]];
-//  // { a: 1, b: 2, c: 3 }
+//  { a: 1, b: 2, c: 3 }
+
+// const arr = [
+//   ["a", 1],
+//   ["b", 2],
+//   ["c", 3],
+// ];
+
+// function arrayToObject(arr) {}
+
+// arrayToObject(arr);
+
 // Задача 2
 // Напишите функцию isEmpty, которая будет проверять, пуст ли объект.
-const obj = {};
+
+// const obj = { a: 1 };
+
+// function isEmpty(obj) {
+//   let result = "";
+//   if (Object.entries(obj).length === true) {
+//     console.log((result = true));
+//   } else {
+//     console.log((result = false));
+//   }
+// }
+
+// isEmpty();
+
 // Задача 3 **
 //  Создать объект "Товар" с полями "название", "цена" и методом "снизить цену", который уменьшает цену на указанное значение.
+
+const product = {
+  tv: 20,
+  mouse: 10,
+  can: 5,
+  candies: 25,
+};
