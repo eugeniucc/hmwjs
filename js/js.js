@@ -196,22 +196,210 @@
 //   "world" : 1
 // }
 
-const str = "Hello world";
+// const str = "Hello World";
 
-const letter = "o";
+// const letter = "o";
 
-function findOccurrences(str, letter) {
-  const arr = str.split(" ");
-  let obj = {};
-  arr.forEach((element) => {
-    let acc = 0;
-    for (const iterator of element) {
-      if (iterator === letter) {
-        acc++;
-      }
-    }
-    console.log(acc);
-  });
+// function findOccurrences(str, letter) {
+//   const arr = str.toLowerCase().split(" ");
+//   let obj = {};
+//   arr.forEach((element) => {
+//     let acc = 0;
+//     for (const count of element) {
+//       if (count === letter) {
+//         acc++;
+//         obj[element] = acc;
+//       }
+//     }
+//   });
+//   console.log(obj);
+// }
+
+// findOccurrences(str, letter);
+
+// Google запускает сеть автономных дронов для доставки пиццы и хочет, чтобы вы создали гибкую систему вознаграждений (Pizza Points™), которую можно будет настроить в будущем. Правила просты: если клиент сделал хотя бы N заказов на сумму не менее Y , он получает БЕСПЛАТНУЮ пиццу!
+
+// Создайте функцию, которая принимает объект клиентов, минимальное количество заказов и минимальную цену заказа. Верните массив клиентов, которые имеют право на бесплатную пиццу.  Примеры; ➞ ["Spider-Man"]
+
+// const customersObj = {
+//   Batman: [22, 30, 11, 17, 15, 52, 27, 12],
+//   SpiderMan: [5, 17, 30, 33, 40, 22, 26, 10, 11, 45],
+// };
+
+// function pizzaPoints(customers, minOrders, minPrice) {
+//   const eligibleCustomers = [];
+//   for (const customer in customers) {
+//     const orders = customers[customer];
+//     if (
+//       orders.length >= minOrders &&
+//       orders.every((order) => order >= minPrice)
+//     ) {
+//       eligibleCustomers.push(customer);
+//     }
+//   }
+//   return eligibleCustomers;
+// }
+
+// Предположим, у вас есть список гостей и их страны, хранящиеся в виде пар ключ-значение в объекте.
+
+// Напишите функцию, которая принимает имя и возвращает тег имени , который должен читаться так:
+
+// "Hi! I'm [name], and I'm from [country]."
+// Если имя отсутствует в объекте, верните:
+
+// "Hi! I'm a guest."
+// Примеры
+// greeting("Randy") ➞ "Hi! I'm Randy, and I'm from Germany."
+
+// const GUEST_LIST = {
+//   Randy: "Germany",
+//   Karla: "France",
+//   Wendy: "Japan",
+//   Norman: "England",
+//   Sam: "Argentina",
+// };
+
+// const guest = "sss";
+
+// function helloGuest(customers, guest) {
+//   for (const key in customers) {
+//     if (key === guest) {
+//       console.log(`Hi! I'm ${key}, and I'm from ${customers[key]}.`);
+//     }
+//     if (key !== guest) {
+//       console.log("Hi! I'm a guest.");
+//     }
+//   }
+// }
+
+// helloGuest(GUEST_LIST, guest);
+
+// Вам будет предоставлен объект с различными потребительскими товарами и соответствующими ценами. Вернуть список товаров с минимальной ценой 500 в порядке убывания. Примеры ➞ ["TV","Computer"]
+
+// const products = { Computer: 600, TV: 800, Radio: 50 };
+// const minPrice = 500;
+
+// function filtPrice(products, minPrice) {
+//   let arr = [];
+//   let obj = {};
+//   for (const key in products) {
+//     const prices = products[key];
+//     if (prices > minPrice) {
+//       obj[key] = prices;
+//       arr.push(obj);
+//     }
+//   }
+//   let oneObj = Array.from(new Set(arr));
+//   let emptyArr = [];
+//   for (const value of oneObj) {
+//     let result = Object.entries(value).sort((a, b) => b[1] - a[1]);
+//     for (const name of result) {
+//       emptyArr.push(name[0]);
+//     }
+//   }
+
+//   console.log(emptyArr);
+// }
+
+// filtPrice(products, minPrice);
+
+// Видео 1
+
+// let user = {
+//   name: "Vitaliy",
+//   age: 30,
+//   sayHi() {
+//     console.log("hello" + this.name);
+//   },
+// };
+
+// user.sayHi = function () {
+//   console.log("hello");
+// };
+
+// function sayHi() {
+//   console.log("hello");
+// }
+
+// user.sayHi = sayHi;
+
+// console.log(user);
+
+// user.sayHi();
+
+// function sayHi() {
+//   console.log(this.name);
+// }
+
+// let user = { name: "vitaly" };
+
+// let admin = { name: "sergey" };
+
+// user.f = sayHi;
+// admin.f = sayHi;
+
+// user.f();
+// admin.f();
+
+// const sayHi = () => {
+//   console.log("hello" + this.name);
+// };
+
+// let user = { name: "vitaly" };
+
+// let admin = { name: "sergey" };
+
+// user.f = sayHi;
+// admin.f = sayHi;
+
+// user.f();
+// admin.f();
+
+// Видео 2
+
+const person = Object.create(
+  {
+    calculateAge() {
+      console.log("Age:", new Date().getFullYear() - this.birthYear);
+    },
+  },
+  {
+    name: {
+      value: "vladilen",
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    },
+    birthYear: {
+      value: 1993,
+      enumerable: false,
+      writable: false,
+      configurable: false,
+    },
+    age: {
+      get() {
+        return new Date().getFullYear() - this.birthYear;
+      },
+      set(value) {
+        document.body.style.background = "red";
+        console.log("Set age", value);
+      },
+    },
+  }
+);
+
+for (const key in person) {
+  if (person.hasOwnProperty(key)) {
+    console.log("key", key, person[key]);
+  }
 }
 
-findOccurrences(str, letter);
+// Домашка
+// Напишите функцию arrayToObject, которая будет преобразовывать массив вида [ключ, значение] обратно в объект.
+// const arr = [['a', 1], ['b', 2], ['c', 3]];
+//  // { a: 1, b: 2, c: 3 }
+// Задача 2
+// Напишите функцию isEmpty, которая будет проверять, пуст ли объект.
+const obj = {};
+// Задача 3 **
+//  Создать объект "Товар" с полями "название", "цена" и методом "снизить цену", который уменьшает цену на указанное значение.
