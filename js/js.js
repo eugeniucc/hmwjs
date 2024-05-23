@@ -404,32 +404,219 @@
 //   ["c", 3],
 // ];
 
-// function arrayToObject(arr) {}
+// function arrayToObject(arr) {
+//   return arr.reduce((acc, [key, value]) => {
+//     acc[key] = value;
+//     return acc;
+//   }, {});
+// }
 
-// arrayToObject(arr);
+// console.log(arrayToObject(arr));
 
 // Задача 2
 // Напишите функцию isEmpty, которая будет проверять, пуст ли объект.
 
-// const obj = { a: 1 };
-
+// const obj = {};
 // function isEmpty(obj) {
-//   let result = "";
-//   if (Object.entries(obj).length === true) {
-//     console.log((result = true));
+//   if (Object.entries(obj).length === 0) {
+//     console.log("true");
 //   } else {
-//     console.log((result = false));
+//     console.log("false");
 //   }
 // }
 
-// isEmpty();
+// isEmpty(obj);
 
 // Задача 3 **
 //  Создать объект "Товар" с полями "название", "цена" и методом "снизить цену", который уменьшает цену на указанное значение.
 
-const product = {
-  tv: 20,
-  mouse: 10,
-  can: 5,
-  candies: 25,
-};
+// const product = {
+//   tv: "lg",
+//   price: 100,
+
+//   reducePrice: function (amount) {
+//     if (amount > 0 && amount < this.price) {
+//       this.price -= amount;
+//     } else {
+//       console.log("Некоректное значение");
+//     }
+//   },
+// };
+
+// product.reducePrice(25);
+
+// console.log(product);
+
+// const arr = [1, 2, 34, 5, 6, 67];
+
+// const [one, two, three, ...last] = arr;
+
+// console.log(one);
+// console.log(two);
+// console.log(three);
+// console.log(last);
+
+// const person = {
+//   value: "vladilen",
+//   enumerable: true,
+//   writable: true,
+//   configurable: true,
+// };
+
+// const { value, writable } = person;
+
+// console.log(writable);
+
+// Создайте объект "Банковский счет" с полями "имя владельца", "баланс" и методом "пополнить баланс", который увеличивает баланс на указанное значение.
+
+// const bankAccount = {
+//   userName: "Vadim",
+//   userDeposit: 2000,
+//   addAmount: function (amount) {
+//     if (amount > 0) {
+//       this.userDeposit += amount;
+//     }
+//   },
+// };
+
+// bankAccount.addAmount(200);
+// console.log(bankAccount);
+
+// Создайте объект "Автомобиль" с полями "марка", "модель", "пробег" и методом "добавить пробег", который увеличивает пробег на указанное значение.
+
+// const car = {
+//   name: "toyota",
+//   model: "q8",
+//   kilometers: 220000,
+//   maxSpeed: 120,
+//   addKm: function (km) {
+//     if (km > 0) {
+//       this.kilometers += km;
+//     }
+//   },
+//   maxSpeedToKm: function (tokm = 1.6) {
+//     if (tokm > 0) {
+//       this.maxSpeed = this.maxSpeed / tokm;
+//     }
+//   },
+// };
+
+// car.addKm(9999);
+
+// console.log(car);
+
+// car.maxSpeedToKm();
+// console.log(car);
+
+// Создайте объект "Студент" с полями "имя", "возраст", "оценки" и методом "добавить оценку", который добавляет новую оценку к массиву оценок.
+// Оценки студентов не могут быть отрицательными или 0  а так же не быть больше 5
+
+// const student = {
+//   name: "Anna",
+//   age: 22,
+//   number: [1, 1, 1, 1, 1],
+//   addNumber: function (grade) {
+//     if (grade > 0 && grade <= 5) {
+//       this.number.push(grade);
+//     }
+//   },
+// };
+
+// student.addNumber(4);
+// student.addNumber(5);
+
+// console.log(student);
+
+// Создайте объект "Ресторан" с полями "название", "меню" и методом "добавить в меню", который добавляет новое блюдо к массиву меню.
+// Блюда не могут быть цифрами
+
+// const restaurant = {
+//   name: "wawes",
+//   menu: ["steak", "salad"],
+//   totalTips: 0,
+//   minOrderAmount: 50,
+//   addInMenu: function (dish) {
+//     if (typeof dish === "string") {
+//       this.menu.push(dish);
+//     }
+//   },
+//   addTips: function (guestOrder, tips) {
+//     if (guestOrder >= this.minOrderAmount && tips >= 15) {
+//       this.totalTips = (guestOrder * tips) / 100;
+//     } else if (guestOrder < this.minOrderAmount) {
+//       this.totalTips = (guestOrder * 15) / 100;
+//     } else {
+//       console.log("jlob");
+//     }
+//   },
+// };
+
+// restaurant.addInMenu("porkchop");
+
+// console.log(restaurant);
+
+// restaurant.addTips(200, 10);
+
+// console.log(restaurant);
+
+// Создайте объект "Фильм" с полями "название", "режиссер", "рейтинг" и методом "изменить рейтинг", который изменяет рейтинг фильма на новое значение.
+
+// const movie = {
+//   name: "terminator",
+//   author: "John Travolta",
+//   rating: 8,
+//   reviews: [],
+//   changeRating: function (addRating) {
+//     this.rating += addRating;
+//   },
+//   addReviews: function (review) {
+//     if (review.length >= 20 && review.length <= 100) {
+//       this.reviews.push(review);
+//     }
+//   },
+// };
+
+// movie.changeRating(2);
+
+// console.log(movie);
+
+// movie.addReviews("goood");
+
+// console.log(movie);
+
+// Увеличьте на 1 все четные числа в массиве, а нечетные оставьте без изменений.
+// [1, 3, 3, 5, 5, 7]
+
+// const array = [1, 2, 3, 4, 5, 6];
+
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i] % 2 === 0) {
+//     array[i] += 1;
+//   }
+// }
+
+// console.log(array);
+
+// Создайте функцию, которая принимает массив объектов и рассчитывает общую сумму на основе количества купленных товаров. При необходимости применяйте налог с продаж в размере 6% для каждого товара. ➞ 15.3
+
+// const checkout = [
+//   { desc: "potato chips", price: 2, qty: 2, taxable: false },
+//   { desc: "soda", price: 3, qty: 2, taxable: false },
+//   { desc: "paper plates", price: 5, qty: 1, taxable: true },
+// ];
+
+// function checkTaxes(arr) {
+//   let taxApply = 0;
+//   let result = 0;
+//   let sum = 0;
+//   arr.forEach((element) => {
+//     sum += element.price * element.qty;
+//     if (element.taxable === true) {
+//       taxApply = (element.price * element.qty * 6) / 100;
+//     }
+//     result = sum + taxApply;
+//   });
+//   console.log(result);
+// }
+
+// checkTaxes(checkout);
