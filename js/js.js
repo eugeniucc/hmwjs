@@ -620,3 +620,49 @@
 // }
 
 // checkTaxes(checkout);
+
+// Домашка
+// Задача 1 **
+// Создайте объект "Библиотека" с полями "название", "книги" и методом "добавить книгу", который добавляет новую книгу в массив книг.
+// Так же необходимо добавить удаление книг из библиотеки (наверно по совпадению в названии но не по индексу)
+// (необходимо реализовать проверку если книги нет в библиотеки тогда нужно выводить в консоль что книга не найдена в библиотеки)
+// Так же необходимо реализовать метод сортировки книг по алфавиту
+
+const library = {
+  name: "America",
+  books: ["ben", "arnold", "andrew", "themis"],
+  addBooks: function (newBooks) {
+    this.books.push(newBooks);
+  },
+  removeBooks: function (deleteBooks) {
+    for (let i = 0; i < this.books.length; i++) {
+      if (this.books[i] !== deleteBooks) {
+        console.log("This book doesnt exist");
+      }
+      break;
+    }
+    for (let i = 0; i < this.books.length; i++) {
+      if (this.books[i] === deleteBooks) {
+        this.books.splice(i, 1);
+      }
+      break;
+    }
+  },
+  sortBooks: function () {
+    for (let i = 0; i < this.books.length; i++) {
+      this.books.sort();
+    }
+  },
+};
+
+// 1
+// library.addBooks("big book");
+// console.log(library);
+
+// 2
+// library.removeBooks("ben");
+// console.log(library);
+
+// 3
+library.sortBooks();
+console.log(library);
