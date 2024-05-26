@@ -624,45 +624,247 @@
 // Домашка
 // Задача 1 **
 // Создайте объект "Библиотека" с полями "название", "книги" и методом "добавить книгу", который добавляет новую книгу в массив книг.
-// Так же необходимо добавить удаление книг из библиотеки (наверно по совпадению в названии но не по индексу)
+// Так же необходимо добавить удаление книг из библиотеки
 // (необходимо реализовать проверку если книги нет в библиотеки тогда нужно выводить в консоль что книга не найдена в библиотеки)
 // Так же необходимо реализовать метод сортировки книг по алфавиту
 
-const library = {
-  name: "America",
-  books: ["ben", "arnold", "andrew", "themis"],
-  addBooks: function (newBooks) {
-    this.books.push(newBooks);
-  },
-  removeBooks: function (deleteBooks) {
-    for (let i = 0; i < this.books.length; i++) {
-      if (this.books[i] !== deleteBooks) {
-        console.log("This book doesnt exist");
-      }
-      break;
-    }
-    for (let i = 0; i < this.books.length; i++) {
-      if (this.books[i] === deleteBooks) {
-        this.books.splice(i, 1);
-      }
-      break;
-    }
-  },
-  sortBooks: function () {
-    for (let i = 0; i < this.books.length; i++) {
-      this.books.sort();
-    }
-  },
-};
+// const library = {
+//   name: "America",
+//   books: ["ben", "arnold", "andrew", "themis"],
+//   addBooks: function (newBooks) {
+//     this.books.push(newBooks);
+//   },
+//   removeBooks: function (deleteBooks) {
+//     for (let i = 0; i < this.books.length; i++) {
+//       if (this.books[i] !== deleteBooks) {
+//         console.log("This book doesnt exist");
+//       }
+//       break;
+//     }
+//     for (let i = 0; i < this.books.length; i++) {
+//       if (this.books[i] === deleteBooks) {
+//         this.books.splice(i, 1);
+//       }
+//       break;
+//     }
+//   },
+//   sortBooks: function () {
+//     for (let i = 0; i < this.books.length; i++) {
+//       this.books.sort();
+//     }
+//   },
+// };
 
 // 1
 // library.addBooks("big book");
 // console.log(library);
 
 // 2
-// library.removeBooks("ben");
+// library.removeBooks("sss");
 // console.log(library);
 
 // 3
-library.sortBooks();
-console.log(library);
+// library.sortBooks();
+// console.log(library);
+
+// Создай объект "Магазин" с полями "название" и "товары", а также методами:
+
+// добавитьТовар — добавляет новый товар в массив товаров.
+// удалитьТовар — удаляет товар из массива товаров, если товар существует.
+// подсчитатьТовары — возвращает количество товаров в магазине.
+
+// const shop = {
+//   name: "Our Shop",
+//   products: ["watermelon", "lemon", "apple"],
+//   addProduct: function (fruit) {
+//     this.products.push(fruit);
+//   },
+//   removeProduct: function (fruit) {
+//     for (let i = 0; i < this.products.length; i++) {
+//       if (this.products[i] === fruit) {
+//         console.log("product doesn't exist");
+//       }
+//       break;
+//     }
+//     for (let i = 0; i < this.products.length; i++) {
+//       if (this.products[i] !== fruit) {
+//         this.products.splice(i, 1);
+//       }
+//       break;
+//     }
+//   },
+//   amountOfProducts: function () {
+//     let acc = 0;
+//     for (let i = 0; i < this.products.length; i++) {
+//       acc++;
+//     }
+//     console.log(acc);
+//   },
+// };
+
+// shop.addProduct("banana");
+// console.log(shop);
+
+// shop.removeProduct("lemon");
+// console.log(shop);
+
+// shop.amountOfProducts();
+
+// Создай объект "Автопарк" с полями "название" и "автомобили", а также методами:
+
+// добавитьАвтомобиль — добавляет новый автомобиль в массив автомобилей.
+// удалитьАвтомобиль — удаляет автомобиль из массива автомобилей, если автомобиль существует.
+// подсчитатьАвтомобили — возвращает количество автомобилей в автопарке.
+// найтиАвтомобиль — находит автомобиль по модели.
+// фильтроватьАвтомобилиПоТипу — фильтрует автомобили по типу.
+
+// const autoPark = {
+//   namePark: "Best autoPark",
+//   name: ["toyota", "hyndai", "bmw", "Gwagon", "amg", "tesla"],
+//   addCar: function (nameCar) {
+//     this.name.push(nameCar);
+//   },
+//   removeCar: function (car) {
+//     const index = this.name.indexOf(car);
+//     if (index !== -1) {
+//       this.name.splice(index, 1);
+//     } else {
+//       console.log("this car doesnt exist");
+//     }
+//   },
+//   countCars: function () {
+//     let acc = 0;
+//     for (let i = 0; i < this.name.length; i++) {
+//       acc++;
+//     }
+//     console.log(acc);
+//   },
+//   findCar: function (newCar) {
+//     const index = this.name.indexOf(newCar);
+//     if (index !== -1) {
+//       console.log("car exist");
+//     } else {
+//       console.log("didnt found car name");
+//     }
+//   },
+//   filterCars: function (type) {
+//     let result = this.name.filter((element) => element === type);
+//     console.log(result);
+//   },
+// };
+
+// autoPark.addCar("ferrari");
+// console.log(autoPark);
+
+// autoPark.removeCar("bmw");
+// console.log(autoPark);
+
+// autoPark.findCar("sss");
+// console.log(autoPark);
+
+// autoPark.filterCars("tesla");
+// console.log(autoPark);
+
+// Объект "Ресторан" с методами добавления, удаления блюд, подсчета блюд, нахождения блюда по названию и фильтрации блюд по типу(создавать массив объектов)
+
+// { name: 'Оливье', type: 'салат' }
+
+// const arrRestaurant = {
+//   dishes: [
+//     {
+//       name: "Оливье",
+//       type: "салат",
+//     },
+//     {
+//       name: "цезарь",
+//       type: "салат",
+//     },
+//     {
+//       name: "летний",
+//       type: "салат",
+//     },
+//     {
+//       name: "Уха",
+//       type: "суп",
+//     },
+//     {
+//       name: "Картошка",
+//       type: "гарнир",
+//     },
+//     {
+//       name: "Устрицы",
+//       type: "закуска",
+//     },
+//   ],
+//   addDish: function (dish) {
+//     this.dishes.push(dish);
+//   },
+//   removeDish: function (dishName) {
+//     const index = this.dishes.findIndex((dish) => dish.name === dishName);
+//     if (index !== -1) {
+//       this.dishes.splice(index, 1);
+//     } else {
+//       console.log("this dish doesn t exist");
+//     }
+//   },
+//   countDishes: function () {
+//     let acc = 0;
+//     for (let i = 0; i < this.dishes.length; i++) {
+//       acc++;
+//     }
+//     console.log(acc);
+//   },
+//нахождения блюда по названию и фильтрации блюд по типу(создавать массив объектов)
+// { name: 'Оливье', type: 'салат' }
+//   findDish: function (searchByName) {
+//     const index = this.dishes.findIndex((dish) => dish.name === searchByName);
+//     console.log(this.dishes[index]);
+//   },
+//   findType: function (searchByType) {
+//     let resultDishes = [];
+//     for (let i = 0; i < this.dishes.length; i++) {
+//       if (this.dishes[i].type === searchByType) {
+//         resultDishes.push(this.dishes[i]);
+//       }
+//     }
+//     console.log(resultDishes);
+//   },
+// };
+
+// arrRestaurant.addDish({ name: "Устрицы", type: "закуска" });
+// console.log(arrRestaurant);
+
+// arrRestaurant.removeDish("Устрицы");
+// console.log(arrRestaurant.dishes);
+
+// arrRestaurant.countDishes();
+
+// arrRestaurant.findType("салат");
+
+// Напиши функцию, которая принимает массив объектов и строку - имя свойства. Возвращает объект, где ключи - это уникальные значения указанного свойства, а значения - их частота.
+// const data = [
+//   { id: 1, category: "fruit" },
+//   { id: 2, category: "vegetable" },
+//   { id: 3, category: "fruit" },
+//   { id: 4, category: "grain" },
+//   { id: 5, category: "fruit" },
+// ];
+// let target = "category";
+// { fruit: 3, vegetable: 1, grain: 1 }
+
+// function countCategory(arr) {
+//   const resultObj = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     const category = arr[i].category;
+//     if (resultObj[category]) {
+//       resultObj[category]++;
+//     } else {
+//       resultObj[category] = 1;
+//     }
+//   }
+//   console.log(resultObj);
+// }
+
+// countCategory(data);
+
+
