@@ -352,8 +352,110 @@
 // console.log(sum(3, 4));
 // console.log(sum(102, 3));
 
-const hello = (name) => `Hello, ${name}`;
+// const hello = (name) => `Hello, ${name}`;
 
-console.log(hello("Tom"));
-console.log(hello("Bob"));
-console.log(hello("Frodo"));
+// console.log(hello("Tom"));
+// console.log(hello("Bob"));
+// console.log(hello("Frodo"));
+
+// const user = (userName, userAge) => ({ name: userName, age: userAge });
+
+// let tom = user("Tom", 34);
+// let bob = user("bob", 25);
+
+// console.log(tom.name, tom.age);
+// console.log(bob.name, bob.age);
+
+// const square = (n) => {
+//   const result = n * n;
+//   return result;
+// };
+
+// console.log(square(5));
+
+// function displayZ() {
+//   var z = 20;
+
+//   {
+//     var z = 30;
+//     console.log("Block:", z);
+//   }
+//   console.log("Function:", z);
+// }
+// displayZ();
+
+// let z = 10;
+// function displayZ() {
+//   let z = 20;
+//   {
+//     let z = 30;
+//     console.log(z);
+//   }
+//   console.log(z);
+// }
+
+// displayZ();
+// console.log("global: ", z);
+
+// function setAge() {
+//   userage = 39;
+// }
+
+// setAge();
+// console.log(userage);
+
+// function outer() {
+//   let x = 5;
+//   function inner() {
+//     x++;
+//     console.log(x);
+//   }
+//   return inner;
+// }
+
+// const fn1 = outer();
+// const fn2 = outer();
+// fn1();
+// fn1();
+// fn2();
+// fn2();
+
+// function multiply(n) {
+//   let x = n;
+//   return function (m) {
+//     return x * m;
+//   };
+// }
+// const fn1 = multiply(5);
+// const result1 = fn1(6);
+// console.log(result1);
+
+// const fn2 = multiply(4);
+// const result2 = fn2(6);
+// console.log(result2);
+
+// const result = multiply(5)(6);
+// console.log(result);
+// const result1 = multiply(4)(6);
+// console.log(result1);
+
+// function person(name, age) {
+//   console.log("Person", name, "created");
+
+//   function print() {
+//     console.log("Person ", name, " (" + age + ")");
+//   }
+//   function work() {
+//     console.log("Person ", name, " works");
+//   }
+//   function incrementAge(value) {
+//     age = age + value;
+//   }
+//   return [print, work, incrementAge];
+// }
+
+// const tom = person("Tom", 40);
+// tom[0]();
+// tom[1]();
+// tom[2](3);
+// tom[0]();
