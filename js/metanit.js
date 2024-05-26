@@ -268,26 +268,92 @@
 // console.log("Периметр:", rectangleData.perimeter);
 // console.log("Площадь:", rectangleData.area);
 
-function menu(n) {
-  if (n == 1)
-    return function (x, y) {
-      return x + y;
-    };
-  else if (n == 2)
-    return function (x, y) {
-      return x - y;
-    };
-  else if (n == 3)
-    return function (x, y) {
-      return x * y;
-    };
-}
+// function menu(n) {
+//   if (n == 1)
+//     return function (x, y) {
+//       return x + y;
+//     };
+//   else if (n == 2)
+//     return function (x, y) {
+//       return x - y;
+//     };
+//   else if (n == 3)
+//     return function (x, y) {
+//       return x * y;
+//     };cx
+// }
 
-let action = menu(1);
-console.log(action(2, 5));
+// let action = menu(1);
+// console.log(action(2, 5));
 
-action = menu(2);
-console.log(action(2, 5));
+// action = menu(2);
+// console.log(action(2, 5));
 
-action = menu(3);
-console.log(action(2, 5));
+// action = menu(3);
+// console.log(action(2, 5));
+
+// function sum(x, y) {
+//   return x + y;
+// }
+// function substract(x, y) {
+//   return x - y;
+// }
+// function multiply(x, y) {
+//   return x * y;
+// }
+// function zero() {
+//   return 0;
+// }
+
+// function menu(n) {
+//   switch (n) {
+//     case 1:
+//       return sum;
+//     case 2:
+//       return substract;
+//     case 3:
+//       return multiply;
+//     case 4:
+//       return zero;
+//   }
+// }
+
+// let action = menu(1);
+// console.log(action(5, 4));
+// action = menu(2);
+// console.log(action(5, 4));
+// action = menu(3);
+// console.log(action(5, 4));
+// action = menu(4);
+// console.log(action());
+
+// function hello() {
+//   console.log("Hello");
+// }
+// hello();
+
+// const hello = () => console.log("Hello");
+// hello();
+
+// const print = (mes) => console.log(mes);
+
+// print("Hello Metanit.com");
+// print("Welcome to JavaScript");
+
+// const sum = (x, y) => console.log("Sum =", x + y);
+
+// sum(1, 2);
+// sum(4, 3);
+// sum(103, 2);
+
+// const sum = (x, y) => x + y;
+
+// console.log(sum(1, 2));
+// console.log(sum(3, 4));
+// console.log(sum(102, 3));
+
+const hello = (name) => `Hello, ${name}`;
+
+console.log(hello("Tom"));
+console.log(hello("Bob"));
+console.log(hello("Frodo"));
