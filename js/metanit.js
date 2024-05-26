@@ -231,4 +231,63 @@
 // sum(6, 4);
 // sum(6, 4, 5);
 
+// function sum(a, b) {
+//   const result = a + b;
+//   return result;
+// }
 
+// let num1 = sum(2, 4);
+
+// console.log(num1);
+
+// let num2 = sum(6, 34);
+
+// console.log(num2);
+
+// function rectangle(width, height) {
+//   const perimeter = width * 2 + height * 2;
+//   const area = width * height;
+//   return [perimeter, area];
+// }
+
+// const rectangleData = rectangle(20, 30);
+
+// console.log(rectangleData);
+// console.log(rectangleData[1]);
+
+// function rectangle(width, heigt) {
+//   const rectPerimeter = width * 2 + heigt * 2;
+//   const rectArea = width * heigt;
+//   return { perimeter: rectPerimeter, area: rectArea };
+// }
+
+// const rectangleData = rectangle(20, 30);
+
+// console.log(rectangleData);
+
+// console.log("Периметр:", rectangleData.perimeter);
+// console.log("Площадь:", rectangleData.area);
+
+function menu(n) {
+  if (n == 1)
+    return function (x, y) {
+      return x + y;
+    };
+  else if (n == 2)
+    return function (x, y) {
+      return x - y;
+    };
+  else if (n == 3)
+    return function (x, y) {
+      return x * y;
+    };
+}
+
+let action = menu(1);
+console.log(action(2, 5));
+
+action = menu(2);
+console.log(action(2, 5));
+
+action = menu(3);
+console.log(action(2, 5));
