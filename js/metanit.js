@@ -459,3 +459,19 @@
 // tom[1]();
 // tom[2](3);
 // tom[0]();
+
+// (function () {
+//   console.log("hello");
+// })();
+
+// (function (a, b) {
+//   const result = a + b;
+//   console.log(`${a} + ${b} = ${result}`);
+// })(4, 5);
+
+console.log(
+  ((x, y) =>
+    ((proc2) => ((proc1) => proc1(5, 30))((x, y) => [x, proc2(), y]))(
+      () => x + y
+    ))(10, 15)
+);
