@@ -469,9 +469,117 @@
 //   console.log(`${a} + ${b} = ${result}`);
 // })(4, 5);
 
-console.log(
-  ((x, y) =>
-    ((proc2) => ((proc1) => proc1(5, 30))((x, y) => [x, proc2(), y]))(
-      () => x + y
-    ))(10, 15)
-);
+// console.log(
+//   ((x, y) =>
+//     ((proc2) => ((proc1) => proc1(5, 30))((x, y) => [x, proc2(), y]))(
+//       () => x + y
+//     ))(10, 15)
+// );
+
+// function factorial(n) {
+//   if (n === 1) {
+//     return 1;
+//   } else {
+//     return n * factorial(n - 1);
+//   }
+// }
+
+// const result = factorial(3);
+// console.log(result);
+
+// function fibonachi(n) {
+//   if (n === 0 || n === 1) {
+//     return n;
+//   } else {
+//     return fibonachi(n - 1) + fibonachi(n - 2);
+//   }
+// }
+
+// const result = fibonachi(2);
+// console.log(result);
+
+// function print() {
+//   console.log("morning");
+//   print = function () {
+//     console.log("day");
+//   };
+// }
+
+// print();
+// print();
+
+// function print() {
+//   console.log("morning");
+//   print = function () {
+//     console.log("day");
+//   };
+// }
+// const printMessage = print;
+
+// print();
+// print();
+// printMessage();
+// printMessage();
+
+// function print() {
+//   console.log("morning");
+//   print = function () {
+//     console.log("day");
+//   };
+// }
+
+// print();
+// print();
+// const printMessage = print;
+// printMessage();
+// printMessage();
+
+// console.log(foo);
+// var foo = "tom";
+
+// display();
+
+// function display() {
+//   console.log("hello");
+// }
+
+// let foo;
+// console.log(foo);
+// foo = "Tom";
+// console.log(foo);
+
+// function change(x) {
+//   x = 2 * x;
+//   console.log("x in change:", x);
+// }
+
+// let n = 10;
+// console.log("n before change:", n);
+// change(n);
+// console.log("n after change:", n);
+
+// function change(user) {
+//   user.name = "tom";
+// }
+
+// let bob = {
+//   name: "bob",
+// };
+
+// console.log(bob.name);
+// change(bob);
+// console.log(bob.name);
+
+// function change(array) {
+//   array[0] = 8;
+// }
+// function changeFull(array) {
+// }
+
+// let numbers = [1, 2, 3];
+
+// console.log("before changing", numbers);
+// change(numbers);
+// console.log("after changing", numbers);
+// changeFull(numbers);
+// console.log("after changeFull", numbers);
