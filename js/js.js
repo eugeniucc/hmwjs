@@ -864,7 +864,180 @@
 //   }
 //   console.log(resultObj);
 // }
-
 // countCategory(data);
 
+// Задача 1
+// Напиши функцию, которая принимает строку и возвращает объект, где ключами являются символы строки, а значениями - их частота в строке.
 
+// const str = "abbcccddddeeeee";
+
+// function countChars(str) {
+//   const result = {};
+//   for (const char of str) {
+//     if (!result[char]) {
+//       result[char] = 1;
+//     } else {
+//       result[char]++;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(countChars(str));
+
+// Найти самое длинное слово в объекте и вывести его ключ.
+
+// const dictionary = {
+//   word1: "strawberry",
+//   word2: "banana",
+//   word3: "apple",
+// };
+
+// function countChars(obj) {
+//   let maxLength = 0;
+//   for (const key in obj) {
+//     if (maxLength < obj[key].length) {
+//       maxLength = key;
+//     }
+//   }
+//   return maxLength;
+// }
+
+// console.log(countChars(dictionary));
+
+// Напишите функцию findKeysByValue, которая принимает объект и значение, и возвращает массив ключей, соответствующих этому значению.
+// ['a', 'c']
+
+// const obj = { a: 1, b: 2, c: 1, d: 3 };
+// let target = 1;
+
+// function findKeysByValue(obj, target) {
+//   const result = [];
+//   for (const key in obj) {
+//     if (obj[key] === target) {
+//       result.push(key);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(findKeysByValue(obj, target));
+
+// Напишите функцию findObjectsByValue, которая принимает массив объектов и значение и возвращает массив объектов, содержащих указанное значение.
+
+// [{ id: 1, name: 'apple', category: 'fruits' }, { id: 2, name: 'banana', category: 'fruits' }]
+
+// const data = [
+//   { id: 1, name: "apple", category: "fruits" },
+//   { id: 2, name: "banana", category: "fruits" },
+//   { id: 3, name: "carrot", category: "vegetables" },
+// ];
+// let target = "fruits";
+
+// function findObjectsByValue(arr, target) {
+//   let result = [];
+//   for (const element of arr) {
+//     if (element.category === target) {
+//       result.push(element);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(findObjectsByValue(data, target));
+
+// task1
+
+// Напиши функцию, которая принимает строку и возвращает объект, где ключами являются символы строки, а значениями - их частота в строке.
+// { h: 1, e: 1, l: 2, o: 1 }
+
+// let str = "hello";
+
+// function chars(str) {
+//   const resultObj = {};
+//   const chars = str.split("");
+//   for (let index = 0; index < chars.length; index++) {
+//     let char = chars[index];
+//     if (resultObj[char]) {
+//       resultObj[char]++;
+//     } else {
+//       resultObj[char] = 1;
+//     }
+//   }
+//   return resultObj;
+// }
+
+// console.log(chars(str));
+
+// Задача 2
+// Создайте объект "Медицинский Центр" с возможностью добавления, удаления, поиска пациентов по имени, сортировки пациентов по дате регистрации и обновления информации о пациенте.
+// добавитьПациента — добавляет нового пациента в массив пациентов.
+// удалитьПациента — удаляет пациента из массива пациентов, если пациент существует.
+// подсчитатьПациентов — возвращает количество пациентов в медицинском центре.
+// найтиПациента — находит пациента по имени.
+// сортироватьПациентовПоДатеРегистрации — сортирует пациентов по дате регистрации.
+// 6. фильтроватьПациентовПоВрачу — фильтрует пациентов по врачу.
+// 7. обновитьПациента — обновляет информацию о пациенте.
+
+// const hostiptal = {
+//   patients: [
+//     { name: "Иван", date: 2022, doctor: "Алекс" },
+//     { name: "Мария", date: 2023, doctor: "Лера" },
+//     { name: "Аня", date: 2024, doctor: "Александр" },
+//   ],
+//   addPatient: function (patient) {
+//     this.patients.push(patient);
+//   },
+// removePatient: function (patient) {
+//   if (что то по индексу было) {
+
+//   } else {
+//     console.log("Patient exist");
+//   }
+// },
+//   countPatients: function () {
+//     return this.patients.length;
+//   },
+//   findPatient: function (name) {
+//     const exist = this.patients.find((patient) => patient.name === name);
+//     if (!exist) {
+//       return console.log("Patient dont exist");
+//     } else {
+//       return console.log("Patient exist");
+//     }
+//   },
+//   sortDatePatients: function () {
+//     return this.patients.sort((a, b) => a.date - b.date);
+//   },
+//   sortDoctorPatient: function (doctor) {
+//     return this.patients.filter((patient) => patient.doctor === doctor);
+//   },
+//   updatePatient: function () {
+
+//   },
+// };
+
+// hostiptal.addPatient({ name: "Игорь", date: 2025 });
+// console.log(hostiptal);
+
+// hostiptal.removePatient("Аня");
+// console.log(hostiptal);
+
+// console.log(hostiptal.countPatients());
+
+// console.log(hostiptal.findPatient("Аня")); // вывод и undefined
+
+// console.log(hostiptal.sortDatePatients());
+
+// console.log(hostiptal.sortDoctorPatient("Лера"));
+
+// Задача 3
+// Напиши функцию, которая принимает массив объектов и строку - имя свойства. Возвращает значение этого свойства, которое встречается чаще всего.
+// const data = [
+//   { id: 1, category: 'fruit' },
+//   { id: 2, category: 'vegetable' },
+//   { id: 3, category: 'fruit' },
+//   { id: 4, category: 'grain' },
+//   { id: 5, category: 'fruit' }
+// ];
+// 'fruit'

@@ -583,3 +583,19 @@
 // console.log("after changing", numbers);
 // changeFull(numbers);
 // console.log("after changeFull", numbers);
+
+// const user = new Object();
+
+// const user = {};
+// user.name = "Tom";
+// user.age = 26;
+// console.log(user);
+
+// const name = "Tom";
+// const age = 34;
+// const user = { name, age };
+
+// const teacher = { user, course: "JavaScript" };
+// console.log(teacher.user);
+// console.log(teacher.course);
+// console.log(teacher);
