@@ -599,3 +599,106 @@
 // console.log(teacher.user);
 // console.log(teacher.course);
 // console.log(teacher);
+
+// "use strict";
+
+// const user = { name: "Tom", age: 27 };
+
+// console.log(user);
+
+// const name = "tom";
+// const age = 34;
+// const user = { name, age };
+// console.log(user.name);
+// console.log(user.age);
+
+// const user = {};
+// user.name = "Tom";
+// user.age = 26;
+// user.display = function () {
+//   console.log(user.name);
+//   console.log(user.age);
+// };
+
+// user.display();
+
+// const user = {
+//   name: "Tom",
+//   age: 26,
+//   display: function () {
+//     console.log(this.name);
+//     console.log(this.age);
+//   },
+// };
+
+// user.display();
+
+// let user = {
+//   name: "Tom",
+//   age: 26,
+//   display() {
+//     console.log(this.name, this.age);
+//   },
+//   move(place) {
+//     console.log(this.name, "goes to", place);
+//   },
+// };
+
+// user.display();
+// user.move("the shop");
+
+// const user = {};
+// user["name"] = "Tom";
+// user["age"] = 26;
+// user["display"] = function () {
+//   console.log(user.name);
+//   console.log(user.age);
+// };
+
+// user["display"]();
+
+// const user = {
+//   ["name"]: "Tom",
+//   ["age"]: 26,
+//   ["display"]: function () {
+//     console.log(user.name);
+//     console.log(user.age);
+//   },
+// };
+
+// user["display"]();
+
+// const user = {
+//   name: "Tom",
+//   age: 26,
+//   display: function () {
+//     console.log(user.name);
+//     console.log(user.age);
+//   },
+// };
+
+// user.display();
+
+// const user = {
+//   name: "Tom",
+//   age: 26,
+//   "full name": "Tom Johns",
+//   "display info": function () {
+//     console.log(user.name);
+//     console.log(user.age);
+//   },
+// };
+
+// console.log(user["full name"]);
+// user["display info"]();
+
+const prop1 = "name";
+const prop2 = "age";
+const tom = {
+  [prop1]: "Tom",
+  [prop2]: 37,
+};
+
+console.log(tom);
+console.log(tom.name);
+console.log(tom["age"]);

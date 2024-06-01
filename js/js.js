@@ -1088,20 +1088,20 @@
 
 // Напишите функцию uniqueValuesByKey(array, key), которая возвращает массив уникальных значений указанного ключа из массива объектов.
 
-const data = [
-  { id: 1, category: "fruit" },
-  { id: 2, category: "vegetable" },
-  { id: 3, category: "fruit" },
-  { id: 4, category: "grain" },
-  { id: 5, category: "fruit" },
-];
+// const data = [
+//   { id: 1, category: "fruit" },
+//   { id: 2, category: "vegetable" },
+//   { id: 3, category: "fruit" },
+//   { id: 4, category: "grain" },
+//   { id: 5, category: "fruit" },
+// ];
 
-let key = "category";
+// let key = "category";
 
 // ['fruit', 'vegetable', 'grain']
 
-function uniqueValuesByKey(array, key) {
-  let result = new Set();
-}
+// function uniqueValuesByKey(array, key) {
+//   let result = new Set();
+// }
 
-console.log(uniqueValuesByKey(data, key));
+// console.log(uniqueValuesByKey(data, key));
