@@ -988,22 +988,21 @@
 //   addPatient: function (patient) {
 //     this.patients.push(patient);
 //   },
-// removePatient: function (patient) {
-//   if (что то по индексу было) {
-
-//   } else {
-//     console.log("Patient exist");
-//   }
-// },
+//   removePatient: function (patient) {
+//     const index = this.patients.findIndex(
+//       (element) => element.name === patient
+//     );
+//     this.patients.splice(index, 1);
+//   },
 //   countPatients: function () {
 //     return this.patients.length;
 //   },
 //   findPatient: function (name) {
 //     const exist = this.patients.find((patient) => patient.name === name);
 //     if (!exist) {
-//       return console.log("Patient dont exist");
+//       console.log("Patient dont exist");
 //     } else {
-//       return console.log("Patient exist");
+//       console.log("Patient exist");
 //     }
 //   },
 //   sortDatePatients: function () {
@@ -1012,8 +1011,15 @@
 //   sortDoctorPatient: function (doctor) {
 //     return this.patients.filter((patient) => patient.doctor === doctor);
 //   },
-//   updatePatient: function () {
-
+//   updatePatient: function (name, changeName) {
+//     const checkPatient = this.patients.findIndex(
+//       (patient) => patient.name === name
+//     );
+//     if (checkPatient !== -1) {
+//       this.patients[checkPatient].name = changeName;
+//     } else {
+//       console.log("Patient dont exist");
+//     }
 //   },
 // };
 
@@ -1025,19 +1031,77 @@
 
 // console.log(hostiptal.countPatients());
 
-// console.log(hostiptal.findPatient("Аня")); // вывод и undefined
+// console.log(hostiptal.findPatient("Аня"));
 
 // console.log(hostiptal.sortDatePatients());
 
 // console.log(hostiptal.sortDoctorPatient("Лера"));
 
+// console.log(hostiptal.updatePatient("Иван", "Пётр"));
+// console.log(hostiptal.patients);
+
 // Задача 3
 // Напиши функцию, которая принимает массив объектов и строку - имя свойства. Возвращает значение этого свойства, которое встречается чаще всего.
+
 // const data = [
-//   { id: 1, category: 'fruit' },
-//   { id: 2, category: 'vegetable' },
-//   { id: 3, category: 'fruit' },
-//   { id: 4, category: 'grain' },
-//   { id: 5, category: 'fruit' }
+//   { id: 1, category: "fruit" },
+//   { id: 2, category: "vegetable" },
+//   { id: 3, category: "fruit" },
+//   { id: 4, category: "grain" },
+//   { id: 5, category: "fruit" },
 // ];
-// 'fruit'
+// "fruit"
+
+// function wordAppearance(arr, key) {
+//   let result = arr.reduce((acc, obj) => {
+//     let value = obj[key];
+//     if (value in acc) {
+//       acc[value]++;
+//     } else {
+//       acc[value] = 1;
+//     }
+//     return acc;
+//   }, {});
+//   let resultKey = Object.keys(result).reduce((acc, value) =>
+//     result[acc] > result[value] ? acc : value
+//   );
+//   return resultKey;
+// }
+
+// console.log(wordAppearance(data, "category"));
+
+// Напишите функцию mergeObjects(target, ...sources), которая объединяет несколько объектов в один. Используйте Object.assign.
+
+// const obj1 = { a: 1, b: 2 };
+// const obj2 = { b: 3, c: 4 };
+// const obj3 = { d: 5 };
+
+// { a: 1, b: 3, c: 4, d: 5 }
+
+// function mergeObjects(target, ...sources) {
+//   Object.assign(target, ...sources);
+//   console.log(target);
+//   console.log(...sources);
+// }
+
+// console.log(mergeObjects({}, obj1, obj2, obj3));
+
+// Напишите функцию uniqueValuesByKey(array, key), которая возвращает массив уникальных значений указанного ключа из массива объектов.
+
+const data = [
+  { id: 1, category: "fruit" },
+  { id: 2, category: "vegetable" },
+  { id: 3, category: "fruit" },
+  { id: 4, category: "grain" },
+  { id: 5, category: "fruit" },
+];
+
+let key = "category";
+
+// ['fruit', 'vegetable', 'grain']
+
+function uniqueValuesByKey(array, key) {
+  let result = new Set();
+}
+
+console.log(uniqueValuesByKey(data, key));
