@@ -758,11 +758,115 @@
 // person.display();
 // person.move("cinema");
 
-const personData = [
-  ["name", "Tom"],
-  ["age", 37],
-];
+// const personData = [
+//   ["name", "Tom"],
+//   ["age", 37],
+// ];
 
-const person = Object.fromEntries(personData);
-console.log(person);
-console.log(person.name);
+// const person = Object.fromEntries(personData);
+// console.log(person);
+// console.log(person.name);
+
+// console.log(globalThis);
+
+// function foo() {
+//   var bar = "local";
+//   console.log(this.bar);
+// }
+
+// var bar = "global";
+
+// foo();
+
+// const obj = {
+//   bar: "object",
+//   foo: function () {
+//     console.log(this.bar);
+//   },
+// };
+
+// var bar = "global";
+// obj.foo();
+
+// function foo() {
+//   var bar = "foo_bar";
+//   console.log(this.bar);
+// }
+
+// const obj1 = { bar: "obj1_bar", foo: foo };
+// const obj2 = { bar: "obj2_bar", foo: foo };
+
+// var bar = "global_bar";
+
+// foo();
+// obj1.foo();
+// obj2.foo();
+
+// var bar = "global_bar";
+
+// const obj1 = {
+// bar: "obj_bar",
+// foo: function () {
+//     console.log(this.bar);
+// },
+// };
+
+// const obj2 = { bar: "obj2_bar", foo: obj1.foo };
+
+// const foo = obj1.foo;
+
+// obj1.foo();
+// obj2.foo();
+// foo();
+
+// var bar = "global bar";
+
+// function foo() {
+//   var bar = "foo bar";
+//   function moo() {
+//     console.log(this.bar);
+//   }
+//   moo();
+// }
+// foo();
+
+// function foo() {
+//   console.log(this.bar);
+// }
+
+// var bar = "global";
+// foo();
+
+// const obj = { bar: "object" };
+// const func = foo.bind(obj);
+// func();
+
+// const person = {
+//   name: "Tom",
+//   say: () => console.log(`My names is ${this.name}`),
+// };
+
+// person.say();
+
+// const person = {
+//   name: "Tom",
+//   hello() {
+//     console.log("Hi");
+//     let say = () => console.log(`My name is ${this.name}`);
+//     say();
+//   },
+// };
+
+// person.hello();
+
+// const school = {
+//   title: "Oxford",
+//   courses: ["JavaScript", "TypeScript", "Java", "Go"],
+//   printCourses() {
+//     this.courses.forEach((element) => {
+//       console.log(this.title, element);
+//     });
+//   },
+// };
+
+// school.printCourses();
