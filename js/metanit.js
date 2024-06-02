@@ -692,13 +692,77 @@
 // console.log(user["full name"]);
 // user["display info"]();
 
-const prop1 = "name";
-const prop2 = "age";
-const tom = {
-  [prop1]: "Tom",
-  [prop2]: 37,
-};
+// const prop1 = "name";
+// const prop2 = "age";
+// const tom = {
+//   [prop1]: "Tom",
+//   [prop2]: 37,
+// };
 
-console.log(tom);
-console.log(tom.name);
-console.log(tom["age"]);
+// console.log(tom);
+// console.log(tom.name);
+// console.log(tom["age"]);
+
+// function createObject(propName, propValue) {
+//   return {
+//     [propName]: propValue,
+//     print() {
+//       console.log(`${propName}: ${propValue}`);
+//     },
+//   };
+// }
+
+// const person = createObject("name", "Tom");
+// person.print();
+
+// const book = createObject("title", "Javascript Reference");
+// book.print();
+
+// let user = {
+//   name: "tom",
+//   age: 26,
+//   display: function () {
+//     console.log(user.name);
+//     console.log(user.age);
+//   },
+// };
+
+// console.log(user.name);
+// delete user.name;
+// console.log(user);
+
+// function getSalary(status) {
+//   if (status === "senior") {
+//     return 1500;
+//   } else {
+//     return 500;
+//   }
+// }
+// const name = "Tom";
+// const age = 37;
+// const person = { name: name, age: age, salary: getSalary() };
+
+// console.log(person);
+
+// function display() {
+//   console.log(this.name, this.age);
+// }
+// const move = function (place) {
+//   console.log(this.name, "goes to", place);
+// };
+// const name = "Tom";
+// const age = 37;
+// const salary = 500;
+// const person = { name, age, salary, display, move };
+
+// person.display();
+// person.move("cinema");
+
+const personData = [
+  ["name", "Tom"],
+  ["age", 37],
+];
+
+const person = Object.fromEntries(personData);
+console.log(person);
+console.log(person.name);
