@@ -1086,6 +1086,49 @@
 
 // console.log(mergeObjects({}, obj1, obj2, obj3));
 
+// Задача 1
+// Учитывая целочисленный массив, преобразуйте этот массив в зеркало.
+// mirror([0, 2, 4, 6]) ➞ [0, 2, 4, 6, 4, 2, 0]
+
+// const mirror = [0, 2, 4, 6];
+
+// function arrMirror(arr) {
+//   let mirrored = arr.slice(0, arr.length - 1).reverse();
+//   let result = arr.concat(mirrored);
+//   return console.log(result);
+// }
+
+// arrMirror(mirror);
+
+// Задача 2
+// Учитывая входную строку, переверните ее слово за словом, первое слово будет последним и так далее.
+
+// reverseWords(" the sky is blue") ➞ "blue is sky the"
+
+// const words = "the sky is blue";
+
+// function reverseWords(str) {
+//   const arr = str.split(" ").reverse();
+//   const result = arr.join(" ");
+//   console.log(result);
+// }
+
+// reverseWords(words);
+
+// Задача 3
+// Создайте функцию, которая принимает два аргумента: исходное значение price и discount процент в виде целых чисел и возвращает окончательную цену после скидки.
+// dis(1500, 50) ➞ 750
+
+// const price = 1500;
+// const discount = 50;
+
+// function countDiscount(price, discount) {
+//   const result = (price * discount) / 100;
+//   console.log(`Total price with discount is ${result}`);
+// }
+
+// countDiscount(price, discount);
+
 // Напишите функцию uniqueValuesByKey(array, key), которая возвращает массив уникальных значений указанного ключа из массива объектов.
 
 // const data = [
