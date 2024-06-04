@@ -870,3 +870,40 @@
 // };
 
 // school.printCourses();
+
+// const country = {
+//   name: "Germany",
+//   language: "немецкий",
+//   capital: {
+//     name: "Berlin",
+//     population: 3375000,
+//     year: 1237,
+//   },
+// };
+
+// console.log("Столица:", country.capital.name);
+// console.log("Население:", country["capital"]["population"]);
+// console.log("Год основания", country.capital["year"]);
+
+const country = {
+  name: "Щвейцария",
+  languages: ["немецкий", "французкий", "итальянский"],
+  capital: {
+    name: "Берн",
+    population: 126598,
+  },
+  cities: [
+    { name: "Цюрих", population: 378884 },
+    { name: "Женева", population: 188634 },
+    { name: "Базель", population: 164937 },
+  ],
+};
+
+console.log("Официальные языки Щвейцарии");
+for (const lang of country.languages) {
+  console.log(lang);
+}
+console.log("Города Щвейцарии:");
+for (const city of country.cities) {
+  console.log(city.name);
+}

@@ -1129,7 +1129,7 @@
 
 // countDiscount(price, discount);
 
-// Напишите функцию uniqueValuesByKey(array, key), которая возвращает массив уникальных значений указанного ключа из массива объектов.
+// Напишите функцию uniqueValuesByKey(array, key), которая возвращает массив уникальных значений указанного ключа из массива объектов. ["fruit", "vegetable", "grain"];
 
 // const data = [
 //   { id: 1, category: "fruit" },
@@ -1141,10 +1141,14 @@
 
 // let key = "category";
 
-// ['fruit', 'vegetable', 'grain']
-
 // function uniqueValuesByKey(array, key) {
 //   let result = new Set();
+//   for (const item of array) {
+//     if (item === key) {
+//       result.add(item);
+//     }
+//   }
+//   return console.log(result);
 // }
 
 // console.log(uniqueValuesByKey(data, key));
