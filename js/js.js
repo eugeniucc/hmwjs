@@ -1094,6 +1094,7 @@
 
 // function arrMirror(arr) {
 //   let mirrored = arr.slice(0, arr.length - 1).reverse();
+//   console.log(mirrored);
 //   let result = arr.concat(mirrored);
 //   return console.log(result);
 // }
@@ -1142,13 +1143,94 @@
 // let key = "category";
 
 // function uniqueValuesByKey(array, key) {
-//   let result = new Set();
-//   for (const item of array) {
-//     if (item === key) {
-//       result.add(item);
+//   const category = array.map((element) => element[key]);
+//   let result = Array.from(new Set(category));
+//   return result;
+// }
+
+// console.log(uniqueValuesByKey(data, key));
+
+// Напишите функцию mergeObjects, которая принимает массив объектов и объединяет их в один объект. Если свойства совпадают, значения должны перезаписываться.(Без использования циклов)
+
+// const objs = [{ a: 1, b: 2 }, { b: 3, c: 4 }, { d: 5 }];
+// { a: 1, b: 3, c: 4, d: 5 }
+
+// function mergeObjects(arr) {
+//   let result = Object.assign(...arr);
+//   console.log(result);
+// }
+
+// mergeObjects(objs);
+
+// апишите функцию removePropertiesWithValue, которая принимает объект и значение, и возвращает новый объект без свойств с указанным значением.(Без использования циклов)
+
+// let target = 1;
+// const obj = { a: 1, b: 2, c: 1, d: 3 };
+// { b: 2, d: 3 }
+
+// function removePropertiesWithValue(obj, target) {
+//   let arr = Object.entries(obj);
+//   let arrFilter = arr.filter(([key, value]) => value !== target);
+//   let result = Object.fromEntries(arrFilter);
+//   console.log(result);
+// }
+
+// removePropertiesWithValue(obj, target);
+
+// Задача: Напишите функцию, которая принимает два объекта и возвращает новый объект, где значения совпадающих ключей суммируются.
+
+// const obj1 = { a: 1, b: 2, c: 3 };
+// const obj2 = { a: 2, c: 4, d: 1 };
+// { a: 3, b: 2, c: 7, d: 1 }
+
+// function sumObj(obj1, obj2) {
+//   let result = {};
+//   for (const key in obj1) {
+//     if (key in obj2) {
+//       result[key] = obj1[key] + obj2[key];
+//     } else {
+//       result[key] = obj1[key];
+//     }
+//   }
+//   for (const key in obj2) {
+//     if (!(key in result)) {
+//       result[key] = obj2[key];
 //     }
 //   }
 //   return console.log(result);
 // }
 
-// console.log(uniqueValuesByKey(data, key));
+// sumObj(obj1, obj2);
+
+// Напишите функцию removeEmptyProperties, которая принимает объект и возвращает новый объект без свойств, значения которых равны null, undefined или пустой строке.
+
+// const obj = { a: 1, b: null, c: "", d: 4 };
+
+// function removeEmptyProperties(obj) {
+//   let result = {};
+//   for (const key in obj) {
+//     if (typeof obj[key] === "number") {
+//       result[key] = obj[key];
+//     }
+//   }
+//   return console.log(result);
+// }
+
+// removeEmptyProperties(obj);
+
+// Напишите функцию countUniqueValues, которая принимает объект и возвращает количество уникальных значений среди всех свойств.
+
+// const obj = { a: 1, b: 2, c: 3, d: 1 };
+
+// 3
+
+// function countUniqueValues(obj) {
+//   let arr = Object.values(obj);
+//   let result = new Set(arr);
+//   console.log(result.size);
+// }
+
+// countUniqueValues(obj);
+
+
+
