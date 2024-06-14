@@ -1232,5 +1232,60 @@
 
 // countUniqueValues(obj);
 
+// Задача 1
+// Задача: изменить значение всех свойств объекта на заданное значение и создать массив значений
+// ['Unknown', 'Unknown', 'Unknown']
 
+// const numbers = { a: 1, b: 5, c: 8, d: 3 };
 
+// let target = "Unknown";
+
+// function unknown(obj, target) {
+//   let arr = Object.values(obj);
+//   for (let index = 0; index < arr.length; index++) {
+//     arr[index] = target;
+//   }
+//   return console.log(arr);
+// }
+
+// unknown(numbers, target);
+
+// Задача 2
+// Задача: Удалить все свойства объекта, значение которых равно заданному значению.
+
+// const user = { name: "John", age: 30, city: null };
+// let target = null;
+
+// function deleteTarget(obj, target) {
+//   for (const key in obj) {
+//     if (obj[key] === target) {
+// тут с удаление ключа и свойства через delete или оставить ключ но тогда присвоить " " ?
+//       obj[key] = "";
+//     }
+//   }
+//   return console.log(obj);
+// }
+
+// deleteTarget(user, target);
+
+// Задача 3
+// Напишите функцию, которая принимает массив из 10 целых чисел (от 0 до 9) и возвращает строку из этих чисел в виде номера телефона.
+
+function generatePhoneNumber() {
+  let arr = [];
+  for (let i = 0; i < 13; i++) {
+    let randNumber = Math.floor(Math.random() * 10);
+    arr.push(randNumber);
+  }
+  arr[0] = "(";
+  arr[3] = ")";
+  arr[4] = " ";
+  arr[8] = "-";
+  console.log(arr.join(""));
+}
+
+generatePhoneNumber();
+
+// Пример:
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+// => returns "(123) 456-7890"
