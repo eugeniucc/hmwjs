@@ -907,3 +907,68 @@
 // for (const city of country.cities) {
 //   console.log(city.name);
 // }
+
+// const tom = { name: "Tom" };
+// const bob = tom;
+// console.log(tom.name);
+// console.log(bob.name);
+
+// bob.name = "Bob";
+// console.log("После изменения");
+
+// console.log(tom.name);
+// console.log(bob.name);
+
+// bob.age = 37;
+// console.log(tom);
+
+// Object.assign(target, ...source);
+
+// const tom = { name: "Tom", age: 37 };
+// const bob = Object.assign({}, tom);
+// bob.name = "Bob";
+// bob.age = 41;
+
+// console.log(tom);
+// console.log(bob);
+
+// const tom = { name: "Tom" };
+// const sam = { age: 37 };
+// const person = { height: 170 };
+
+// Object.assign(person, tom, sam);
+// console.log(person);
+
+// const tom = { name: "Tom", age: 37 };
+// const sam = { age: 45 };
+// const person = { heigh: 170 };
+// Object.assign(person, tom, sam);
+// console.log(person);
+
+// const tom = { name: "Tom", company: { title: "Microsoft" } };
+// const bob = Object.assign({}, tom);
+// bob.name = "Bob";
+// bob.company.title = "Google";
+// console.log(tom.name);
+// console.log(bob.company.title);
+
+// const tom = { name: "Tom", age: 37, company: "Google" };
+// const bob = { ...tom };
+// bob.name = "Bob";
+
+// console.log(tom);
+// console.log(bob);
+
+// const tom = { name: "Tom", age: 37, company: "Google" };
+// const bob = { ...tom, name: "Bob" };
+
+// console.log(tom);
+// console.log(bob);
+
+// const tom = { name: "Tom", age: 37, company: { title: "Microsoft" } };
+// const bob = { ...tom };
+// bob.name = "Bob";
+// bob.company.title = "Google";
+
+// console.log(tom.company.title);
+// console.log(bob.company.title);
