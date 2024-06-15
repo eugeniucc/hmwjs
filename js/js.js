@@ -1237,7 +1237,6 @@
 // ['Unknown', 'Unknown', 'Unknown']
 
 // const numbers = { a: 1, b: 5, c: 8, d: 3 };
-
 // let target = "Unknown";
 
 // function unknown(obj, target) {
@@ -1259,8 +1258,7 @@
 // function deleteTarget(obj, target) {
 //   for (const key in obj) {
 //     if (obj[key] === target) {
-// тут с удаление ключа и свойства через delete или оставить ключ но тогда присвоить " " ?
-//       obj[key] = "";
+//       delete obj[key];
 //     }
 //   }
 //   return console.log(obj);
@@ -1271,21 +1269,88 @@
 // Задача 3
 // Напишите функцию, которая принимает массив из 10 целых чисел (от 0 до 9) и возвращает строку из этих чисел в виде номера телефона.
 
-function generatePhoneNumber() {
-  let arr = [];
-  for (let i = 0; i < 13; i++) {
-    let randNumber = Math.floor(Math.random() * 10);
-    arr.push(randNumber);
-  }
-  arr[0] = "(";
-  arr[3] = ")";
-  arr[4] = " ";
-  arr[8] = "-";
-  console.log(arr.join(""));
-}
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-generatePhoneNumber();
+// function createPhoneNumber(numbers) {
+//   if (numbers.length !== 10 || !numbers.every((num) => num >= 0 && num <= 9)) {
+//     throw new Error("Input must be an array of 10 integers between 0 and 9.");
+//   }
+
+//   const areaCode = numbers.slice(0, 3).join("");
+//   const firstPart = numbers.slice(3, 6).join("");
+//   const secondPart = numbers.slice(6, 10).join("");
+
+//   return `(${areaCode}) ${firstPart}-${secondPart}`;
+// }
+// console.log(createPhoneNumber(numbers));
 
 // Пример:
 // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
 // => returns "(123) 456-7890"
+
+// Получение уникальных элементов:
+// const data5 = [1, 2, 2, 3, 4, 4, 5];
+// [1, 2, 3, 4, 5]
+
+// function uniqueValues(arr) {
+//   let result = [...new Set(arr)];
+//   console.log(result);
+// }
+
+// uniqueValues(data5);
+
+// Напишите функцию, которая принимает массив чисел и возвращает объект с двумя массивами: один для четных чисел и другой для нечетных.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+// function sortArray(arr) {
+//   return arr.reduce(
+//     (acc, value) => {
+//       if (value % 2 === 0) {
+//         acc.even.push(value);
+//       } else {
+//         acc.odd.push(value);
+//       }
+//       return acc;
+//     },
+//     { even: [], odd: [] }
+//   );
+// }
+
+// console.log(sortArray(arr));
+
+// Напишите функцию, которая принимает массив строк и возвращает объект, где ключами являются длины строк, а значениями - массивы строк соответствующей длины.
+
+// {
+//   '5': ['apple', 'pear'],
+//   '6': ['banana'],
+//   '6': ['orange'],
+//   '4': ['kiwi']
+// }
+
+// const strings = ["apple", "banana", "orange", "pear", "kiwi"];
+
+// function sortArr(arr) {
+//   return arr.reduce((acc, value) => {
+//     const wordLength = value.length;
+//     if (!acc[wordLength]) {
+//       acc[wordLength] = [];
+//     }
+//     acc[wordLength].push(value);
+//     return acc;
+//   }, {});
+// }
+
+// console.log(sortArr(strings));
+
+// Напишите функцию, которая принимает два массива и возвращает новый массив, содержащий только те элементы, которые присутствуют в обоих массивах.
+// const array1 = [1, 2, 3, 4, 5];
+// const array2 = [3, 4, 5, 6, 7];
+// [3, 4, 5]
+
+// function sortArr(arr1, arr2) {
+//   const result = arr1.filter((value) => arr2.includes(value));
+//   console.log(result);
+// }
+
+// console.log(sortArr(array1, array2));
