@@ -972,3 +972,40 @@
 
 // console.log(tom.company.title);
 // console.log(bob.company.title);
+
+// const user = {};
+// user.name = "Tom";
+// user.age = 26;
+// user.print = function () {
+//   console.log(this.name);
+//   console.log(this.age);
+// };
+
+// const hasNameProp = "name" in user;
+// console.log(hasNameProp);
+
+// const hasWeightProp = "weight" in user;
+// console.log(hasWeightProp);
+
+// const hasPrintMethod = "print" in user;
+// console.log(hasPrintMethod);
+
+// console.log("/////////////////");
+
+// const hasNamePropUndefined = user.name !== undefined;
+// console.log(hasNamePropUndefined);
+
+// const hasWeightPropUndefined = user.weight !== undefined;
+// console.log(hasWeightPropUndefined);
+
+const tom = {
+  name: "Tom",
+  age: 26,
+  print() {
+    console.log(`Name: ${this.name}, age: ${this.age}`);
+  },
+};
+
+for (const prop in tom) {
+  console.log(prop, ":", tom[prop]);
+}

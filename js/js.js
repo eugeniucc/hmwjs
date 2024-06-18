@@ -1354,3 +1354,61 @@
 // }
 
 // console.log(sortArr(array1, array2));
+
+// Домашка
+// №1
+// Напишите функцию, которая принимает массив объектов и имя поля, и возвращает объект, где ключи - это значения указанного поля, а значения - соответствующие объекты.
+
+// const data = [
+//   { id: 1, type: "fruit", name: "apple" },
+//   { id: 2, type: "fruit", name: "banana" },
+//   { id: 3, type: "vegetable", name: "carrot" },
+//   { id: 4, type: "fruit", name: "orange" },
+//   { id: 5, type: "vegetable", name: "cabbage" },
+// ];
+
+// let target = "type";
+
+// function swapKeyValues(arr, target) {
+//   // через reduce
+// }
+
+// console.log(swapKeyValues(data, target));
+
+// №2
+// Напишите функцию sumNestedArrays(arrays), которая принимает массив вложенных массивов чисел и возвращает сумму всех чисел.
+// 21
+
+const data1 = [[1, 2], [3, 4, 5], [6]];
+
+function sumNestedArrays(arrays) {
+  const arr = [];
+  [...arrays] = arr;
+  console.log(arr);
+}
+
+console.log(sumNestedArrays(data1));
+
+// №3
+// Напишите функцию findMinByField(objects, field), которая принимает массив объектов и имя поля, и возвращает объект с минимальным значением этого поля.
+// { id: 4, value: 1 }
+
+// let target = "value"
+
+// const data3 = [
+//   { id: 1, value: 5 },
+//   { id: 2, value: 3 },
+//   { id: 3, value: 8 },
+//   { id: 4, value: 1 }
+// ];
+
+// Напишите функцию sortByLengthAndAlphabet(strings), которая принимает массив строк и возвращает массив строк, отсортированный сначала по длине, а затем по алфавиту.
+// ['kiwi', 'pear', 'apple', 'banana', 'orange']
+
+// const data4 = ['kiwi', 'apple', 'banana', 'orange', 'pear'];
+
+// №4**
+// Напишите функцию findFirstUnique(numbers), которая принимает массив чисел и возвращает первый уникальный элемент.
+// 3
+
+// const data6 = [1, 2, 3, 2, 1, 4, 5, 4, 6];
