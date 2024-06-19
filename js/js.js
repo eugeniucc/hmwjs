@@ -1359,6 +1359,20 @@
 // №1
 // Напишите функцию, которая принимает массив объектов и имя поля, и возвращает объект, где ключи - это значения указанного поля, а значения - соответствующие объекты.
 
+/*
+{
+  fruit: [
+    { id: 1, type: 'fruit', name: 'apple' },
+    { id: 2, type: 'fruit', name: 'banana' },
+    { id: 4, type: 'fruit', name: 'orange' }
+  ],
+  vegetable: [
+    { id: 3, type: 'vegetable', name: 'carrot' },
+    { id: 5, type: 'vegetable', name: 'cabbage' }
+  ]
+}
+*/
+
 // const data = [
 //   { id: 1, type: "fruit", name: "apple" },
 //   { id: 2, type: "fruit", name: "banana" },
@@ -1367,10 +1381,16 @@
 //   { id: 5, type: "vegetable", name: "cabbage" },
 // ];
 
-// let target = "type";
+// let target = "name";
 
 // function swapKeyValues(arr, target) {
-//   // через reduce
+//   return arr.reduce((acc, value) => {
+//     if (!acc[value[target]]) {
+//       acc[value[target]] = [];
+//     }
+//     acc[value[target]].push(value);
+//     return acc;
+//   }, {});
 // }
 
 // console.log(swapKeyValues(data, target));
@@ -1379,36 +1399,106 @@
 // Напишите функцию sumNestedArrays(arrays), которая принимает массив вложенных массивов чисел и возвращает сумму всех чисел.
 // 21
 
-const data1 = [[1, 2], [3, 4, 5], [6]];
+// const data1 = [[1, 2], [3, 4, 5], [6]];
 
-function sumNestedArrays(arrays) {
-  const arr = [];
-  [...arrays] = arr;
-  console.log(arr);
-}
+// function sumNestedArrays(arrays) {
+//   const oneArr = arrays.flat();
+//   const result = oneArr.reduce((a, b) => a + b);
+//   console.log(result);
+// }
 
-console.log(sumNestedArrays(data1));
+// console.log(sumNestedArrays(data1));
 
 // №3
 // Напишите функцию findMinByField(objects, field), которая принимает массив объектов и имя поля, и возвращает объект с минимальным значением этого поля.
 // { id: 4, value: 1 }
 
-// let target = "value"
-
 // const data3 = [
 //   { id: 1, value: 5 },
 //   { id: 2, value: 3 },
+//   { id: 4, value: 1 },
 //   { id: 3, value: 8 },
-//   { id: 4, value: 1 }
 // ];
 
+// let target = "value";
+
+// function findMinByField(objects, target) {
+//   return objects.reduce((acc, value) => {
+//     return value[target] < acc[target] ? value : acc;
+//   });
+// }
+
+// console.log(findMinByField(data3, target));
+
+//№4
 // Напишите функцию sortByLengthAndAlphabet(strings), которая принимает массив строк и возвращает массив строк, отсортированный сначала по длине, а затем по алфавиту.
 // ['kiwi', 'pear', 'apple', 'banana', 'orange']
 
-// const data4 = ['kiwi', 'apple', 'banana', 'orange', 'pear'];
+// const data4 = ["kiwi", "apple", "banana", "orange", "pear"];
 
-// №4**
+// function sortByLengthAndAlphabet(strings) {
+//   const sortByNumber = strings.sort((a, b) => a.length - b.length);
+//   const copyArr = strings.slice();
+//   const sortByChar = copyArr.sort();
+//   console.log(sortByNumber);
+//   console.log(sortByChar);
+// }
+
+// console.log(sortByLengthAndAlphabet(data4));
+
+// №5**
 // Напишите функцию findFirstUnique(numbers), которая принимает массив чисел и возвращает первый уникальный элемент.
 // 3
 
 // const data6 = [1, 2, 3, 2, 1, 4, 5, 4, 6];
+
+// function findFirstUnique(arr) {
+//   const count = {};
+//   for (const num of arr) {
+//     if (count[nums]) {
+//       count[num]++;
+//     } else {
+//       count[num] = 1;
+//     }
+//   }
+//   for (const num of arr) {
+//     if (count[num] === 1) {
+//       return num;
+//     }
+//   }
+// }
+
+// console.log(findFirstUnique(data6));
+
+// Напишите функцию createNestedObject(keys, value), которая создает объект с вложенными свойствами на основе массива ключей.
+
+// { a: { b: { c: 42 } } }
+
+// const arr = ["a", "b", "c"];
+// const num = 42;
+
+// function createNestedObject(arr, num) {
+//   return arr.reduceRight((acc, key) => {
+//     return { [key]: acc };
+//   }, num);
+// }
+
+// console.log(createNestedObject(arr, num));
+
+// Напишите функцию invertObject(obj), которая переворачивает объект, делая ключи значениями, а значения - ключами.
+
+// { Alice: "name", 25: "age", Paris: "city" }
+
+// const data = { name: "Alice", age: 25, city: "Paris" };
+
+// function invertObject(obj) {
+//   const result = {};
+//   for (const key in obj) {
+//     result[obj[key]] = key;
+//   }
+//   console.log(result);
+// }
+
+// console.log(invertObject(data));
+
+
