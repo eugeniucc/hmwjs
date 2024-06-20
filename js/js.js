@@ -1531,13 +1531,16 @@
 // ];
 
 // function transformToObject(arr) {
-//   return arr.reduce((acc, value) => {
-//     for (const key in acc) {
-//       if () {
-
+//   const result = {};
+//   arr.forEach((element) => {
+//     Object.keys(element).forEach((key) => {
+//       if (!result[key]) {
+//         result[key] = [];
 //       }
-//     }
-//   }, {})
+//       result[key].push(element[key]);
+//     });
+//   });
+//   return console.log(result);
 // }
 
 // console.log(transformToObject(data));
@@ -1555,8 +1558,187 @@
 //   { type: "fruit", name: "banana" },
 // ];
 
-// function groupAndCountBy(arr,prop) {
-
+// function groupAndCountBy(arr, prop) {
+//   return arr.reduce((acc, value) => {
+//     const key = value[prop];
+//     if (!acc[key]) {
+//       acc[key] = 0;
+//     }
+//     acc[key]++;
+//     return acc;
+//   }, {});
 // }
 
-// console.log(groupAndCountBy(data,target));
+// console.log(groupAndCountBy(data, target));
+
+// Напишите функцию, которая принимает массив и перемещает все нули в конец массива, сохраняя порядок остальных элементов
+// let data = [0, 1, 0, 3, 12];
+// [1, 3, 12, 0, 0]
+
+// function arrangeArr(arr) {
+//   const result = [];
+//   for (let index = 0; index < arr.length; index++) {
+//     if (arr[index] === 0) {
+//       result.push(arr[index]);
+//     }
+//   }
+//   const result2 = [];
+//   for (let index = 0; index < arr.length; index++) {
+//     if (arr[index] !== 0) {
+//       result2.push(arr[index]);
+//     }
+//   }
+//   let result3 = [];
+//   return console.log((result3 = [...result2, ...result]));
+// }
+
+// console.log(arrangeArr(data));
+
+// Напишите функцию, которая принимает массив чисел и возвращает третий наибольший элемент.
+// const arr = [5, 2, 8, 3, 1, 7, 4, 6];
+
+// 6
+
+// function averageNumber(arr) {
+//   arr.sort((a, b) => {
+//     return b - a;
+//   });
+//   console.log(arr[2]);
+// }
+
+// console.log(averageNumber(arr));
+
+// Напишите функцию, которая принимает два массива чисел, объединяет их, удаляет дубликаты и возвращает отсортированный массив.
+
+// const array1 = [3, 1, 4];
+// const array2 = [4, 5, 6, 1];
+// // [1, 3, 4, 5, 6]
+
+// function sortArr(arr1, arr2) {
+//   const concatResult = arr1.concat(arr2);
+//   const resultArr = [...new Set(concatResult)];
+//   const result = resultArr.sort((a, b) => a - b);
+//   console.log(result);
+// }
+
+// console.log(sortArr(array1, array2));
+
+// Напишите функцию areAllEqual(arr), которая принимает массив и возвращает true, если все элементы массива равны, и false в противном случае.
+// const data10b = [1, 1, 2, 1];
+
+// function areAllEqual(arr) {
+//   for (let index = 1; index < arr.length; index++) {
+//     if (arr[index] !== arr[0]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(areAllEqual(data10b));
+
+// Напишите функцию, которая принимает строку и возвращает строку с развернутыми словами.
+
+// "olleH dlroW"
+
+// let str = "Hello World";
+
+// function reverseStr(str) {
+//   const arr = str.split(" ");
+//   const result = arr
+//     .map((element) => element.split("").reverse().join(""))
+//     .join(" ");
+//   console.log(result);
+// }
+
+// console.log(reverseStr(str));
+
+// Напишите функцию, которая принимает массив строк и возвращает массив уникальных слов (регистр не учитывается).
+
+// const sentences = ["Hello world", "hello JavaScript", "World of code"];
+
+// // ['hello', 'world', 'javascript', 'of', 'code']
+
+// function uniqueWords(arr) {
+//   const words = arr.flatMap((element) => element.toLowerCase().split(" "));
+//   const result = [...new Set(words)];
+//   console.log(result);
+// }
+
+// console.log(uniqueWords(sentences));
+
+// Напишите функцию, которая принимает два массива одинаковой длины: ключи и значения, и возвращает объект, где ключи соответствуют значениям.
+
+// const keys = ["name", "age", "city"];
+// const values = ["Alice", 30, "New York"];
+
+// // { name: 'Alice', age: 30, city: 'New York' }
+
+// function oneObj(keys, prop) {
+//   return keys.reduce((acc, value, index) => {
+//     acc[value] = prop[index];
+//     return acc;
+//   }, {});
+// }
+
+// console.log(oneObj(keys, values));
+
+// Напишите функцию, которая принимает два массива и возвращает массив их пересечения.
+// let arr1 = [1, 2, 3];
+// let arr2 = [2, 3, 4];
+// // [2, 3]
+
+// function intersectArr(arr1, arr2) {
+//   const result = arr1.filter((element) => arr2.includes(element));
+//   console.log(result );
+// }
+
+// console.log(intersectArr(arr1, arr2));
+
+// Домашка
+// Задача 1
+// Напишите функцию, которая принимает несколько массивов и возвращает один массив с уникальными значениями из всех входных массивов.(массивов может быть и 500) это должно происходить автоматично не конкат )
+
+// let arr1 = [1, 2, 3];
+// let arr2 = [3, 4, 5];
+// let arr3 = [5, 6, 7];
+
+// [1, 2, 3, 4, 5, 6, 7]
+
+// function uniqueValuesArr(arr1, arr2, arr3) {
+//   const arr = [...arr1, ...arr2, ...arr3];
+//   const result = [...new Set(arr)];
+//   console.log(result);
+// }
+
+// console.log(uniqueValuesArr(arr1, arr2, arr3));
+
+// Задача 2
+// Напишите функцию, которая принимает два массива и возвращает массив пар, где каждая пара состоит из элементов с одинаковыми индексами из обоих массивов.
+// let arr1 = ["a", "b", "c"];
+// let arr2 = [1, 2, 3];
+// // [['a', 1], ['b', 2], ['c', 3]]
+
+// function oneArr(arr1, arr2) {
+//   const result = arr1.map((element, index) => [element, arr2[index]]);
+//   console.log(result);
+// }
+
+// console.log(oneArr(arr1, arr2));
+
+// Задача 3
+// Напишите функцию, которая принимает три массива и возвращает массив элементов, которые присутствуют во всех трех массивах.
+
+// let arr1 = [1, 2, 3, 4];
+// let arr2 = [2, 3, 5];
+// let arr3 = [3, 4, 6];
+// [3]
+
+// function arrIncludesNumber(arr1, arr2, arr3) {
+//   let result = arr1.filter(
+//     (element) => arr2.includes(element) && arr3.includes(element)
+//   );
+//   console.log(result);
+// }
+
+// console.log(arrIncludesNumber(arr1, arr2, arr3));
