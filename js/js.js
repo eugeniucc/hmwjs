@@ -1501,4 +1501,62 @@
 
 // console.log(invertObject(data));
 
+// Задача 1
+// Напишите функцию findObjectByValue(arr, key, value), которая находит объект в массиве объектов по значению указанного свойства.
 
+// const data = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 30 },
+//   { name: "Charlie", age: 35 },
+// ];
+
+// let target = "name";
+// let targetName = "Bob";
+
+// function findObjectByValue(arr, key, value) {
+//   return arr.find((element) => element[key] === value);
+// }
+
+// console.log(findObjectByValue(data, target, targetName));
+
+// Задача 2
+// Напишите функцию transformToObject(arr), которая преобразует массив объектов в один объект, где ключи - это свойства объектов, а значения - массивы значений этих свойств.
+
+// { name: ["Alice", "Bob", "Charlie"], age: [25, 30, 35] }
+
+// const data = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 30 },
+//   { name: "Charlie", age: 35 },
+// ];
+
+// function transformToObject(arr) {
+//   return arr.reduce((acc, value) => {
+//     for (const key in acc) {
+//       if () {
+
+//       }
+//     }
+//   }, {})
+// }
+
+// console.log(transformToObject(data));
+
+// Задача 3
+// Напишите функцию groupAndCountBy(arr, prop), которая группирует массив объектов по значению указанного свойства и подсчитывает количество объектов в каждой группе.
+
+// { fruit: 2, vegetable: 1 }
+
+// let target = "type";
+
+// const data = [
+//   { type: "fruit", name: "apple" },
+//   { type: "vegetable", name: "carrot" },
+//   { type: "fruit", name: "banana" },
+// ];
+
+// function groupAndCountBy(arr,prop) {
+
+// }
+
+// console.log(groupAndCountBy(data,target));
