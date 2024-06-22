@@ -1705,10 +1705,10 @@
 
 // [1, 2, 3, 4, 5, 6, 7]
 
-// function uniqueValuesArr(arr1, arr2, arr3) {
-//   const arr = [...arr1, ...arr2, ...arr3];
-//   const result = [...new Set(arr)];
-//   console.log(result);
+// function uniqueValuesArr(...arr) {
+//   const result = [...arr].flat();
+//   const uniqueNumbers = [...new Set(result)];
+//   console.log(uniqueNumbers);
 // }
 
 // console.log(uniqueValuesArr(arr1, arr2, arr3));
@@ -1732,7 +1732,7 @@
 // let arr1 = [1, 2, 3, 4];
 // let arr2 = [2, 3, 5];
 // let arr3 = [3, 4, 6];
-// [3]
+// // [3]
 
 // function arrIncludesNumber(arr1, arr2, arr3) {
 //   let result = arr1.filter(
@@ -1742,3 +1742,112 @@
 // }
 
 // console.log(arrIncludesNumber(arr1, arr2, arr3));
+
+// Создать генератор хештегов
+// Слова должни вводится в инпут после нажатия на кнопку они должны появлятся на странице в виде хештега
+
+// const input = document.querySelector(".input");
+// const btn = document.querySelector(".btn");
+// const result = document.querySelector(".result");
+
+// function createHashTag() {
+//   const userStr = input.value
+//     .trim()
+//     .split(/\s+/)
+//     .filter((elem) => elem);
+//   console.log(userStr);
+//   if (userStr.length > 0) {
+//     const resultStr = userStr.map((element) => `#${element}`).join("");
+//     result.textContent = resultStr;
+//   } else {
+//     result.textContent = "Введите символ";
+//   }
+// }
+
+// btn.addEventListener("click", createHashTag);
+
+// Задача: Показать или скрыть элементы списка, которые начинаются с определенной буквы, при вводе этой буквы в поле ввода.
+
+// const input = document.querySelector(".input");
+// const items = document.querySelector("#list");
+
+// function deleteByChar() {
+//   const userStr = input.value.trim().toLowerCase();
+//   const item = [...items.querySelectorAll("li")];
+//   item.forEach((element) => {
+//     const listStr = element.textContent.toLocaleLowerCase();
+//     console.log(listStr);
+//     if (userStr[0] === listStr[0]) {
+//       element.style.display = "";
+//     } else {
+//       element.style.display = "none";
+//     }
+//   });
+// }
+
+// input.addEventListener("change", deleteByChar);
+
+// Сортировать элементы списка в алфавитном порядке при нажатии кнопки "Sort".
+
+// const list = document.querySelector("#list");
+// const btn = document.querySelector("#sortButton");
+
+// function sortStr() {
+//   const listItem = [...list.querySelectorAll("li")];
+//   const listText = listItem.map((elem) => elem.textContent).sort();
+//   list.innerHTML = "";
+//   listText.forEach((element) => {
+//     const li = document.createElement("li");
+//     li.textContent = element;
+//     list.appendChild(li);
+//   });
+// }
+
+// btn.addEventListener("click", sortStr);
+
+// Изменить текст всех элементов списка при нажатии кнопки "Change Text".
+
+// const list = document.querySelector("#list");
+// const btn = document.querySelector("#changeText");
+
+// function changeText() {
+//   const listItem = [...list.querySelectorAll("li")];
+//   list.innerHTML = "";
+//   listItem.forEach(() => {
+//     const item = document.createElement("li");
+//     item.textContent = "Change Text";
+//     list.appendChild(item);
+//   });
+// }
+
+// btn.addEventListener("click", changeText);
+
+// Подсчитывать и отображать количество элементов списка в реальном времени.
+
+// const list = document.querySelector("#list");
+// const text = document.querySelector("#totalItems");
+
+// function countItems() {
+//   const items = [...list.querySelectorAll("li")];
+//   text.textContent = items.length;
+// }
+
+// console.log(countItems());
+
+// Добавить новые элементы в список при нажатии кнопки "Add".
+
+// const input = document.querySelector("#newItem");
+// const list = document.querySelector("#list");
+// const btn = document.querySelector("#addItem");
+
+// function addItem() {
+//   const userStr = input.value;
+//   const newItem = document.createElement("li");
+//   newItem.textContent = userStr;
+//   list.appendChild(newItem);
+//   if (userStr.length === 0) {
+//     list.innerHTML = "";
+//   }
+// }
+
+// btn.addEventListener("click", addItem);
