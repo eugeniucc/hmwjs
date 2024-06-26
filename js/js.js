@@ -1969,5 +1969,50 @@
 //   console.log(arrWords);
 // });
 
+// Создайте список дел с возможностью добавлять новые задачи, отмечая их как существующие.
 
+const input = document.querySelector(".input");
+const btn = document.querySelector(".btn");
+const result = document.querySelector(".list");
 
+function addTask() {
+  // если пустое тогда ничего не создаем
+  if (!input.value) {
+    return;
+  }
+  // строка из инпута
+  const str = input.value.toLowerCase();
+
+  // создание элементов
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  const btn = document.createElement("button");
+
+  // стилизация элементов
+  span.textContent = str;
+
+  result.appendChild(li);
+  li.appendChild(span);
+  li.appendChild(btn);
+
+  li.classList.add("liststyle");
+  btn.classList.add("remove");
+
+  btn.textContent = "Done";
+
+  // очистка после добавления таски
+  input.value = "";
+
+}
+
+btn.addEventListener("click", addTask);
+
+// удаление таски на result так как елементы внутри создаются динамически
+
+result.addEventListener("click", function (e) {
+  if (e.target.classList.contains("remove")) {
+    // помог gpt с этими 2 строками
+    const li = e.target.parentElement;
+    result.removeChild(li);
+  }
+});
