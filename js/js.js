@@ -1851,3 +1851,123 @@
 // }
 
 // btn.addEventListener("click", addItem);
+
+// Напишите функцию, которая принимает массив, удаляет из него дубликаты и отображает уникальные элементы на странице.
+
+// const inputArray = document.querySelector("#inputArray");
+// const btn = document.querySelector("#removeDuplicatesBtn");
+// const result = document.querySelector("#result");
+
+// function deleteOdd() {
+//   const arr = [...inputArray.value];
+//   const resultArr = [...new Set(arr)];
+//   result.textContent = resultArr;
+// }
+
+// btn.addEventListener("click", deleteOdd);
+
+// Напишите функцию, которая подсчитывает количество кликов по каждой кнопке и
+// отображает результат.
+
+// const btn = document.querySelectorAll(".countBtn");
+// const result = document.querySelector("#result");
+
+// let count = 0;
+
+// btn.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     result.textContent = count++;
+//   });
+// });
+
+// Напишите функцию, которая извлекает уникальные значения из списка и отображает их в отдельном списке при нажатии на кнопку
+
+// const list = document.querySelector("#itemList");
+// const btn = document.querySelector("#uniqueBtn");
+// const resultList = document.querySelector("#uniqueList");
+
+// function uniqueValues() {
+//   const li = [...list.querySelectorAll("li")].map((el) => el.textContent);
+//   const uniqueValues = [...new Set(li)];
+//   uniqueValues.forEach((el) => {
+//     const li = `<li>${el}</li>`;
+//     resultList.insertAdjacentHTML("beforebegin", li);
+//     resultList.innerHTML += li;
+//   });
+// }
+
+// btn.addEventListener("click", uniqueValues);
+
+// Создайте список элементов на странице и инпут для ввода ключевого слова. Подсветите элементы списка, содержащие это ключевое слово.
+
+// const input = document.querySelector("#highlightInput");
+// const list = document.querySelector("#highlightList");
+
+// function checkKey() {
+//   const li = [...list.querySelectorAll("li")];
+//   const userStr = input.value.toLowerCase();
+//   li.forEach((el) => {
+//     if (el.textContent.toLowerCase().includes(userStr)) {
+//       el.style.background = "green";
+//     } else {
+//       el.style.background = "";
+//     }
+//   });
+// }
+
+// input.addEventListener("change", checkKey);
+
+// Создайте выпадающий список, в котором каждая опция содержит кнопку для удаления этой опции.
+
+// const dropDownList = document.querySelector("#removableDropdown");
+
+// dropDownList.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("removeOption")) {
+//     const option = event.target.parentElement;
+//     dropDownList.removeChild(option);
+//   }
+// });
+
+// const allBuyBtn = document.querySelectorAll(".buyButton");
+// const totalPrice = document.querySelector("#totalPrice");
+// let count = 0;
+// let totalItem = 0;
+// const totalItems = document.querySelector("#totalItems");
+
+// allBuyBtn.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     const card = el.closest(".card");
+//     const priceText = card.querySelector("p").textContent;
+//     const price = parseFloat(priceText.replace("Price: $", ""));
+//     count += price;
+//     totalItem++;
+//     totalItems.textContent = totalItem;
+//     totalPrice.textContent = count;
+//   });
+// });
+
+// Задача 2 Напишите функцию, которая подсчитывает частоту каждого слова в
+// текстовом поле и отображает результат при нажатии на кнопку.
+
+// const userStr = document.querySelector("#textInput");
+// const result = document.querySelector("#result");
+// const btn = document.querySelector("#countBtn");
+
+// countBtn.addEventListener("click", () => {
+//   const str = userStr.value;
+//   const words = str.toLowerCase().match(/\b\w+\b/g) || [];
+//   const obj = {};
+//   words.forEach((el) => {
+//     obj[el] = (obj[el] || 0) + 1;
+//   });
+//   const arrWords = Object.entries(obj);
+//   let text = `<h3>Частота слов: </h3>`;
+//   arrWords.forEach((el) => {
+//     text += `<p> ${el}</p>`;
+//   });
+//   result.innerHTML = text;
+//   console.log(arrWords);
+// });
+
+
+
