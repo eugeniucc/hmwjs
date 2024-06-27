@@ -1971,48 +1971,237 @@
 
 // Создайте список дел с возможностью добавлять новые задачи, отмечая их как существующие.
 
-const input = document.querySelector(".input");
-const btn = document.querySelector(".btn");
-const result = document.querySelector(".list");
+// const input = document.querySelector(".input");
+// const btn = document.querySelector(".btn");
+// const result = document.querySelector(".list");
 
-function addTask() {
-  // если пустое тогда ничего не создаем
-  if (!input.value) {
-    return;
-  }
-  // строка из инпута
-  const str = input.value.toLowerCase();
+// function addTask() {
+//   // если пустое тогда ничего не создаем
+//   if (!input.value) {
+//     return;
+//   }
+//   // строка из инпута
+//   const str = input.value.toLowerCase();
 
-  // создание элементов
-  const li = document.createElement("li");
-  const span = document.createElement("span");
-  const btn = document.createElement("button");
+//   // создание элементов
+//   const li = document.createElement("li");
+//   const span = document.createElement("span");
+//   const btn = document.createElement("button");
 
-  // стилизация элементов
-  span.textContent = str;
+//   // стилизация элементов
+//   span.textContent = str;
 
-  result.appendChild(li);
-  li.appendChild(span);
-  li.appendChild(btn);
+//   result.appendChild(li);
+//   li.appendChild(span);
+//   li.appendChild(btn);
 
-  li.classList.add("liststyle");
-  btn.classList.add("remove");
+//   li.classList.add("liststyle");
+//   btn.classList.add("remove");
 
-  btn.textContent = "Done";
+//   btn.textContent = "Done";
 
-  // очистка после добавления таски
-  input.value = "";
+//   // очистка после добавления таски
+//   input.value = "";
+// }
 
-}
+// btn.addEventListener("click", addTask);
 
-btn.addEventListener("click", addTask);
+// // удаление таски на result так как елементы внутри создаются динамически
 
-// удаление таски на result так как елементы внутри создаются динамически
+// result.addEventListener("click", function (e) {
+//   if (e.target.classList.contains("remove")) {
+//     // помог gpt с этими 2 строками
+//     const li = e.target.parentElement;
+//     result.removeChild(li);
+//   }
+// });
 
-result.addEventListener("click", function (e) {
-  if (e.target.classList.contains("remove")) {
-    // помог gpt с этими 2 строками
-    const li = e.target.parentElement;
-    result.removeChild(li);
-  }
-});
+// Создайте список элементов. При клике на элемент изменяйте его цвет.
+
+// const list = document.querySelector("#itemList");
+
+// list.addEventListener("click", (e) => {
+//   if (e.target.tagName === "LI") {
+//     e.target.style.color = "red";
+//   }
+// });
+
+// Напишите функцию, которая подсвечивает элементы списка при клике и подсчитывает количество кликов по каждому элементу.
+
+// const list = document.querySelector("#clickList");
+// let acc = 0;
+
+// list.addEventListener("click", (e) => {
+//   if (e.target.tagName === "LI") {
+//     e.target.style.color = "red";
+//     acc++;
+//     const li = document.createElement("li");
+//     list.appendChild(li);
+//     li.textContent += `Total clicks: ${acc}`;
+//   }
+// });
+
+// const products = [
+//   {
+//     id: 1,
+//     name: "Laptop",
+//     price: 1000,
+//     description: "A high performance laptop",
+//     category: "Electronics",
+//     inStock: true,
+//     rating: 4.5,
+//     reviews: [
+//       { user: "Alice", comment: "Great laptop!", rating: 5 },
+//       { user: "Bob", comment: "Good value for money.", rating: 4 },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     name: "Smartphone",
+//     price: 700,
+//     description: "A sleek smartphone with latest features",
+//     category: "Electronics",
+//     inStock: true,
+//     rating: 4.2,
+//     reviews: [
+//       { user: "Charlie", comment: "Amazing phone!", rating: 5 },
+//       { user: "David", comment: "Battery life could be better.", rating: 3 },
+//     ],
+//   },
+//   {
+//     id: 3,
+//     name: "Headphones",
+//     price: 150,
+//     description: "Noise-cancelling over-ear headphones",
+//     category: "Electronics",
+//     inStock: false,
+//     rating: 4.8,
+//     reviews: [
+//       { user: "Eve", comment: "Excellent sound quality!", rating: 5 },
+//       { user: "Frank", comment: "Very comfortable.", rating: 4 },
+//     ],
+//   },
+//   {
+//     id: 4,
+//     name: "Coffee Maker",
+//     price: 80,
+//     description: "Brew your perfect cup of coffee",
+//     category: "Kitchen",
+//     inStock: true,
+//     rating: 4.3,
+//     reviews: [
+//       { user: "Grace", comment: "Makes great coffee!", rating: 5 },
+//       { user: "Heidi", comment: "Easy to use.", rating: 4 },
+//     ],
+//   },
+//   {
+//     id: 5,
+//     name: "Vacuum Cleaner",
+//     price: 200,
+//     description: "Powerful and efficient vacuum cleaner",
+//     category: "Home Appliances",
+//     inStock: true,
+//     rating: 4.1,
+//     reviews: [
+//       { user: "Ivan", comment: "Cleans very well.", rating: 4 },
+//       { user: "Judy", comment: "A bit noisy.", rating: 3 },
+//     ],
+//   },
+// ];
+
+// const wrapper = document.querySelector(".wrapper");
+
+// function createCard(products) {
+//   products.forEach((e) => {
+//     const html = `
+//     <div class="card">
+//     <h3>${e.name}</h3>
+//     <p>${e.price}</p>
+//     <p>${e.description}</p>
+//     <p>${e.category}</p>
+//     <p>${e.inStock}</p>
+//     <p>${e.rating}</p>
+//     <button>Buy</button>
+//     </div>
+//     `;
+//     wrapper.innerHTML += html;
+//   });
+// }
+
+// createCard(products);
+
+// Выведите на страницу только тех пользователей в username которых содержится буква "a"
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((rest) => rest.json())
+//   .then((arr) =>
+//     arr.forEach((e) => {
+//       if (e.name.includes("a")) {
+//         const html = `
+//         <div class="card">
+//           <p>${e.name}</p>
+//           <p>${e.username}</p>
+//         </div>
+//       `;
+//         wrapper.innerHTML += html;
+//       }
+//     })
+//   );
+
+// Вывести геолокацию пользователей только с четными id
+
+// const geo = fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((responsive) => responsive.json())
+//   .then((arr) => {
+//     arr.forEach((e) => {
+//       if (e.id % 2 === 0) {
+//         const { lat, lng } = e.address.geo;
+//         const name = e.name;
+//         const html = `
+//         <div class = "card">
+//         <h3>${name}</h3>
+//         <p>Coordinates: ${lat}, ${lng}</p>
+//         </div>
+//         `;
+//         wrapper.innerHTML += html;
+//       }
+//     });
+//   });
+
+// Вывести пользователя с самым длинным email
+
+// const data = fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((responsive) => responsive.json())
+//   .then((arr) => {
+//     let maxLength = 0;
+//     arr.forEach((e) => {
+//       if (e.email.length > maxLength) {
+//         maxLength = e.email.length;
+//       }
+//       if (e.email.length === maxLength) {
+//         const name = e.name;
+//         const card = `
+//         <div class ="card">
+//         <p>${name}. Email: ${e.email}</p>
+//         </div>
+//         `;
+//         wrapper.innerHTML = card;
+//       }
+//     });
+//   });
+
+const wrapper = document.querySelector(".wrapper");
+// Вывести все университеты на страницу
+const data = fetch("http://universities.hipolabs.com/search?country=Denmark")
+  .then((responsive) => responsive.json())
+  .then((arr) => {
+    arr.forEach((e) => {
+      const name = e.name;
+      const hmtl = `
+      <div class ="card">
+      <h3>${name}</h3>
+      </div>
+      `;
+      wrapper.innerHTML += hmtl;
+    });
+  });
