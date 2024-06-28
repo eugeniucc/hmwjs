@@ -2190,18 +2190,79 @@
 //     });
 //   });
 
+// const wrapper = document.querySelector(".wrapper");
+// // Вывести все университеты на страницу
+// const data = fetch("http://universities.hipolabs.com/search?country=Denmark")
+//   .then((responsive) => responsive.json())
+//   .then((arr) => {
+//     arr.forEach((e) => {
+//       const name = e.name;
+//       const hmtl = `
+//       <div class ="card">
+//       <h3>${name}</h3>
+//       </div>
+//       `;
+//       wrapper.innerHTML += hmtl;
+//     });
+//   });
+
+// const wrapper = document.querySelector(".wrapper");
+// const number = document.querySelector(".number");
+// const btn = document.querySelector(".btn");
+
+// let data; // для сохранения данных
+
+// Задание 1
+// Напишите функцию, которая использует fetch, чтобы получить все комментарии к посту с определенным id и вывести их на страницу.(id можно выбрать самому)
+
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((responsive) => responsive.json())
+//   .then((arr) => (data = arr));
+
+// btn.addEventListener("click", () => {
+//   const userNum = Number(number.value);
+
+//   const post = data.find((post) => post.id === userNum);
+//   if (post) {
+//     const title = post.title;
+//     const comment = post.body;
+//     const card = `
+//     <div class = "card">
+//     <p>User with id ->>> ${userNum}</p>
+//     <p>His title ->>> ${title}</p>
+//     <p>His comment ->>> ${comment}</p>
+//     </div>
+//     `;
+//     return (wrapper.innerHTML = card);
+//   } else {
+//     return (wrapper.innerHTML = "<p>This user id didn't exist</p>");
+//   }
+// });
+
+// Задание 2
+// Выведите все тайтлы и айди постов на страницу в список где каждый пост обернут в li при нажатии на каждую Li добавьте возможность удалять этот пост со страницы
 const wrapper = document.querySelector(".wrapper");
-// Вывести все университеты на страницу
-const data = fetch("http://universities.hipolabs.com/search?country=Denmark")
-  .then((responsive) => responsive.json())
+
+let data;
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => response.json())
   .then((arr) => {
-    arr.forEach((e) => {
-      const name = e.name;
-      const hmtl = `
-      <div class ="card">
-      <h3>${name}</h3>
-      </div>
+    data = arr;
+    data.forEach((e) => {
+      const { id, title, body } = e;
+      const card = `
+        <ul>
+        <li> Id ->>> ${id}. Title ->>> ${title}</li>
+        <li>${body}</li>
+        </ul>
       `;
-      wrapper.innerHTML += hmtl;
+      wrapper.innerHTML += card;
     });
   });
+
+wrapper.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    e.target.remove();
+  }
+});
