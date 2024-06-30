@@ -2241,28 +2241,64 @@
 
 // Задание 2
 // Выведите все тайтлы и айди постов на страницу в список где каждый пост обернут в li при нажатии на каждую Li добавьте возможность удалять этот пост со страницы
+
+// const wrapper = document.querySelector(".wrapper");
+
+// let data;
+
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((response) => response.json())
+//   .then((arr) => {
+//     data = arr;
+//     data.forEach((e) => {
+//       const { id, title, body } = e;
+//       const card = `
+//         <ul>
+//         <li> Id ->>> ${id}. Title ->>> ${title}</li>
+//         <li>${body}</li>
+//         </ul>
+//       `;
+//       wrapper.innerHTML += card;
+//     });
+//   });
+
+// wrapper.addEventListener("click", (e) => {
+//   if (e.target.tagName === "LI") {
+//     e.target.remove();
+//   }
+// });
+
+// Напишите функцию, которая выполняет запрос на API после ввода названия страны в поле ввода и отображает данные о стране на странице.
+
+// https://restcountries.com/v3.1/name/Moldova
+
 const wrapper = document.querySelector(".wrapper");
+const input = document.querySelector(".input");
+const btn = document.querySelector(".btn");
 
-let data;
+async function getCountry() {
+  let country = input.value;
+  const userCountry = await fetch(
+    `https://restcountries.com/v3.1/name/${country}`
+  );
+  const data = await userCountry.json();
+  return data;
+}
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-  .then((response) => response.json())
-  .then((arr) => {
-    data = arr;
-    data.forEach((e) => {
-      const { id, title, body } = e;
-      const card = `
-        <ul>
-        <li> Id ->>> ${id}. Title ->>> ${title}</li>
-        <li>${body}</li>
-        </ul>
-      `;
-      wrapper.innerHTML += card;
-    });
-  });
+async function renderCountry() {
+  const [data] = await getCountry();
+  console.log(data);
+  const nativeName = data.area;
+  const name = data.name.common;
+  const card = `
+  <div class = "card">
+  <p>${name}</p>
+  <p>${nativeName}</p>
+  </div>
+  `;
+  wrapper.innerHTML += card;
+}
 
-wrapper.addEventListener("click", (e) => {
-  if (e.target.tagName === "LI") {
-    e.target.remove();
-  }
+btn.addEventListener("click", async () => {
+  await renderCountry();
 });
